@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php 
+
     define('QA_BASE_DIR', dirname( __FILE__ ).'/qa/');
  
     require QA_BASE_DIR.'qa-include/qa-base.php';
@@ -7,6 +8,8 @@
     // require_once QA_BASE_DIR.'qa-include/qa-page.php';
     // require_once QA_BASE_DIR.'qa-include/qa-page-login.php';
     require QA_BASE_DIR.'qa-include/pages/login-ext.php';
+
+    $sec_code = qa_html(qa_get_form_security_code('login'));
     
     // if (qa_get_logged_in_userid()===null)
     //     echo 'not logged in';
@@ -26,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Rapid Innovations</title>
+    <title>RAPIDOVATIONS</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -36,7 +39,6 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -59,7 +61,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Rapid Innovations</a>
+                <a class="navbar-brand page-scroll" href="#page-top">RAPIDOVATIONS</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,20 +69,24 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                    <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a class="page-scroll" href="#idea">Our Idea</a></li>
+                            <li><a class="page-scroll" href="#services">Services</a></li>
+                            <li><a class="page-scroll" href="#team">Founding Members</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="page-scroll" href="#whyrapid">Why Rapid</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#aboutus">About Us</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="qa/">Forum</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#">Online Tests</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact Us</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -101,7 +107,7 @@
                                     </label>
                                 </li>
                                 <li class="hidden">
-                                    <input type="hidden" name="code" id="qa-code" value="0-1443345134-b36e2c12abd8743149f91769c40c6b09f146de28" />
+                                    <input type="hidden" name="code" id="qa-code" value="<?php echo $sec_code ?>" />
                                 </li>
                                 <li>
                                     <button type="submit" value="" id="qa-login" name="dologin" class="btn btn-primary btn-block">Login</button>
@@ -117,10 +123,6 @@
                             </form>
                         </ul>
                     </li>
-                    <!-- <li>
-    <a class="page-scroll" href="#login">Login <span class="fa fa-key"></span></a>
-</li>
- -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -133,10 +135,36 @@
             <div class="intro-text">
                 <!-- <div class="intro-heading">RAPID Innovation!</div> -->
                 <div class="intro-lead-in">Grooming Professionals of Tomorrow</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <a href="#idea" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
         </div>
     </header>
+    <!-- Our Idea Section -->
+    <section id="idea" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Idea</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <p>Welcome to RAPIDOVATIONS – You are at the right place if you have high career aspirations and want to increase your employability.
+                    <br />
+                    <br /> <i>“Increase my employability!!! What do you mean? I’m already into a good college and quite strong in my academics, then why do I need you!?”</i> If you are thinking the same – then let us elaborate on that...
+                    <br />
+                    <br />To get placed in a company of your choice, it’s not just sufficient to be strong on fundamentals of your field of study. It’s equally important to have good aptitude skills and soft skills. The employers want to know how trainable you are, whether or not you are fit to work in a team and if you have that right attitude for the job.
+                    <br />
+                    <br />So... We at RAPID Innovations develop those required skill sets which will help you make an impression on the interviewer and increase your chances of getting that dream job of yours. We have an exhaustive plan which covers all the scenarios that you will face while sitting for placements.
+                    <br />
+                    <br /> And well, yeah... it’s not just about taking you through boring classroom sessions giving you tips and tricks, we also work on improving your overall personality by engaging you in various activities, fun learning and competitions.
+                    <br />
+                    <br />BTW, RAPID is actually an abbreviation – Ruchir, Abhishek, Prasoon and Deepak – the 4 founding members, all having work experience in diversified technology MNCs. Thinking about what that “I” is doing in between? Well, we thought of using it for Innovations so that the name makes some sense.
+                    <br />
+                    <br /> That’s all folks... Just have a look at <a class="page-scroll" href="#whyrapid">Why RAPID</a> to know about what differentiates us.</p>
+            </div>
+        </div>
+    </section>
     <!-- Services Section -->
     <section id="services">
         <div class="container">
@@ -147,6 +175,30 @@
                 </div>
             </div>
             <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="glyphicon glyphicon-bookmark fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Classroom Training</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="glyphicon glyphicon-bullhorn fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Online Tests</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="glyphicon glyphicon-star fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Q&A Platform</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -174,6 +226,48 @@
             </div>
         </div>
     </section>
+    <!-- Founding Members Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Founding Members</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
+                        <h4>Name 1</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
+                        <h4>Name 2</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
+                        <h4>Name 3</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
+                        <h4>Name 4</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Why Rapid Section -->
     <section id="whyrapid">
         <div class="container">
@@ -187,123 +281,26 @@
             </div>
         </div>
     </section>
-    <!-- About Us Section -->
-    <section id="aboutus" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <p>Welcome to RAPID Innovations – You are at the right place if you have high career aspirations and want to increase your employability.
-                    <br />
-                    <br /> <i>“Increase my employability!!! What do you mean? I’m already into a good college and quite strong in my academics, then why do I need you!?”</i> If you are thinking the same – then let us elaborate on that...
-                    <br />
-                    <br />To get placed in a company of your choice, it’s not just sufficient to be strong on fundamentals of your field of study. It’s equally important to have good aptitude skills and soft skills. The employers want to know how trainable you are, whether or not you are fit to work in a team and if you have that right attitude for the job.
-                    <br />
-                    <br />So... We at RAPID Innovations develop those required skill sets which will help you make an impression on the interviewer and increase your chances of getting that dream job of yours. We have an exhaustive plan which covers all the scenarios that you will face while sitting for placements.
-                    <br />
-                    <br /> And well, yeah... it’s not just about taking you through boring classroom sessions giving you tips and tricks, we also work on improving your overall personality by engaging you in various activities, fun learning and competitions.
-                    <br />
-                    <br />BTW, RAPID is actually an abbreviation – Ruchir, Abhishek, Prasoon and Deepak – the 4 founding members, all having work experience in diversified technology MNCs. Thinking about what that “I” is doing in between? Well, we thought of using it for Innovations so that the name makes some sense.
-                    <br />
-                    <br /> That’s all folks... Just have a look at <a href="#whyrapid">Why RAPID</a> to know about what differentiates us.</p>
-            </div>
-        </div>
-    </section>
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
-                        <h4>Name 1</h4>
-                        <p class="text-muted">Designation 1</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
-                        <h4>Name 2</h4>
-                        <p class="text-muted">Designation 2</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
-                        <h4>Name 3</h4>
-                        <p class="text-muted">Designation 3</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/team.png" class="img-responsive img-circle" alt="">
-                        <h4>Name 4</h4>
-                        <p class="text-muted">Designation 4</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Send us a message</h3>
+                    <h3 class="section-subheading text-muted" style="color:#eeeeee">Write to us for any Feedback/Suggestion/Enquiry</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
+                            <div class="col-md-6">
+                                <p style="color: #ffffff;font-size: 18px;">Rapidovations Training Services LLP,</br>
+                                Level 8, Tower 1, Umiya Business Bay, Cessna Business Park,</br>
+                                Kadubeesanahalli, Marathalli Outer Ring Road,</br>
+                                Bangalore – 560103, Karnataka, India.
+                                </p>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
@@ -317,17 +314,14 @@
                                     <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <div class="form-group" style="text-align: center;">
+                                    <div id="success"></div>
+                                    <button type="submit" class="btn btn-xl">Send Message</button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -339,7 +333,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Rapid Innovation 2015</span>
+                    <span class="copyright">Copyright &copy; RAPIDOVATIONS 2015</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
