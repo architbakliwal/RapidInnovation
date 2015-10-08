@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 
-    define('QA_BASE_DIR', dirname( __FILE__ ).'/qa/');
+    define('QA_BASE_DIR', dirname( __FILE__ ).'/forum/');
  
     require QA_BASE_DIR.'qa-include/qa-base.php';
     require QA_BASE_DIR.'qa-include/qa-app-users.php';
@@ -80,7 +80,7 @@
                         <a class="page-scroll" href="#whyrapid">Why Rapid</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="qa/">Forum</a>
+                        <a class="page-scroll" href="forum/">Forum</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">Online Tests</a>
