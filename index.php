@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>RAPIDOVATIONS</title>
+    <title>Rapidovations - Grooming Professionals of Tomorrow</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -61,7 +61,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">RAPIDOVATIONS</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Rapidovations</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -94,7 +94,7 @@
                         <a href="#" title="" data-toggle="dropdown" class="navbar-login-button" style="background-color: transparent;">Login <span class="fa fa-key"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" id="login-dropdown-menu">
-                            <form role="form" action="qa/qa-include/pages/login-ext.php?&to=index.php" method="post" id="loginform">
+                            <form role="form" action="forum/qa-include/pages/login-ext.php?&to=index.php" method="post" id="loginform">
                                 <li>
                                     <input type="text" class="form-control" id="qa-userid" name="emailhandle" placeholder="Email or Username" />
                                 </li>

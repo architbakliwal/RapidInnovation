@@ -8,13 +8,15 @@
 		define('QA_MYSQL_PASSWORD', '');
 		define('QA_MYSQL_DATABASE', 'question2answer');
 	} else {
-		$root_url = 'http://rapidinnovations.in/';
+		$root_url = 'http://rapidovations.com/';
 
 		define('QA_MYSQL_HOSTNAME', 'localhost');
 		define('QA_MYSQL_USERNAME', 'rapid_forum');
 		define('QA_MYSQL_PASSWORD', 'rapid_forum');
 		define('QA_MYSQL_DATABASE', 'rapid_forum');
 	}
+
+	error_reporting(0);
 
 /*
 	Ultra-concise installation instructions:
