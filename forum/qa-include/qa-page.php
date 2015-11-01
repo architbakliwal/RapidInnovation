@@ -25,6 +25,12 @@
 		exit;
 	}
 
+	if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
+	    $baseurl = 'http://127.0.0.1/rapid/';
+	} else {
+		$baseurl = 'http://rapidovations.com/';
+	}
+
 	require_once QA_INCLUDE_DIR.'app/cookies.php';
 	require_once QA_INCLUDE_DIR.'app/format.php';
 	require_once QA_INCLUDE_DIR.'app/users.php';
@@ -675,13 +681,19 @@
 		$logowidth=qa_opt('logo_width');
 		$logoheight=qa_opt('logo_height');
 
+		if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
+		    $baseurl = 'http://127.0.0.1/rapid/';
+		} else {
+			$baseurl = 'http://rapidovations.com/';
+		}
+
 		if ($logoshow)
-			$qa_content['logo']='<a href="'.qa_path_html('').'" class="qa-logo-link" title="'.qa_html(qa_opt('site_title')).'">'.
+			$qa_content['logo']='<a href="'.$baseurl.'" class="qa-logo-link" title="'.qa_html(qa_opt('site_title')).'">'.
 				'<img src="'.qa_html(is_numeric(strpos($logourl, '://')) ? $logourl : qa_path_to_root().$logourl).'"'.
 				($logowidth ? (' width="'.$logowidth.'"') : '').($logoheight ? (' height="'.$logoheight.'"') : '').
 				' border="0" alt="'.qa_html(qa_opt('site_title')).'"/></a>';
 		else
-			$qa_content['logo']='<a href="'.qa_path_html('').'" class="qa-logo-link">'.qa_html(qa_opt('site_title')).'</a>';
+			$qa_content['logo']='<a href="'.$baseurl.'" class="qa-logo-link">'.qa_html(qa_opt('site_title')).'</a>';
 
 		$topath=qa_get('to'); // lets user switch between login and register without losing destination page
 

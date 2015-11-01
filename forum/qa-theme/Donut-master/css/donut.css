@@ -808,6 +808,7 @@ img {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 35px;
 }
 
 @media (min-width: 768px) {
@@ -1242,14 +1243,17 @@ div .header-banner {
 }
 
 .donut-footer {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin-top: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*margin-top: 50px;*/
     color: #777777;
     text-align: center;
     border-top: 1px solid #e2e2e2;
     background-color: #fbfbfb;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .qa-footer {

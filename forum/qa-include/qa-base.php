@@ -24,6 +24,12 @@
 	define('QA_VERSION', '1.7.1'); // also used as suffix for .js and .css requests
 	define('QA_BUILD_DATE', '2015-07-27');
 
+	if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
+	    $baseurl = 'http://127.0.0.1/rapid/';
+	} else {
+		$baseurl = 'http://rapidovations.com/';
+	}
+
 
 	/**
 	 * Autoloads some Q2A classes so it's possible to use them without adding a require_once first. From version 1.7 onwards.
