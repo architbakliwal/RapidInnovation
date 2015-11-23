@@ -83,7 +83,7 @@
                         <a class="page-scroll" href="forum/">Forum</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Online Tests</a>
+                        <a class="page-scroll" href="online-test/">Online Tests</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact Us</a>
@@ -113,12 +113,12 @@
                                     <button type="submit" value="" id="qa-login" name="dologin" class="btn btn-primary btn-block">Login</button>
                                 </li>
                                 <li class="register">
-                                    <a class="btn btn-success btn-block" href="qa/index.php?qa=register" title="Register as a new user">
+                                    <a class="btn btn-success btn-block" href="forum/index.php?qa=register" title="Register as a new user">
                                         Register
                                     </a>
                                 </li>
                                 <li class="forgot-password">
-                                    <a href="qa/index.php?qa=forgot">I forgot my password</a>
+                                    <a href="forum/index.php?qa=forgot">I forgot my password</a>
                                 </li>
                             </form>
                         </ul>
