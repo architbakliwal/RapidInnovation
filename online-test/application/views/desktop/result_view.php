@@ -1,82 +1,12 @@
 <style>
-@media print {
-   
-   .clearfix{
-   display:none;
-   }
-   #footer{
-   display:none;
-   }
-   .hide_btn_while_print{
-   display:none;
-   }
-   .show_btn_while_print{
-   display:block;
-   float:right;
-   }
-   
-}
 
-@media screen {
- .show_btn_while_print{
-   display:none;
-   }
-}
-
-.result_card tr td{
-
-border-bottom:1px solid #dddddd;
+.result_card tr td {
+  border-bottom:1px solid #dddddd;
 }
 
 </style>
 
-
-<style>
- 
-
-.sharing-buttons{
-  list-style: none;
-  text-decoration: none;
-  
-}
-
-.sharing-buttons li{
-  display: inline;
-}
-
-.sharing-buttons a{
-  border: 1px solid;
-  padding: 0.5em;
-  color: #fff;
-  text-decoration: none;
-}
-
-.sharing-buttons a:hover{
-  color: #eee;
-  text-decoration: none;
-}
-
-.fa{
-  padding: 0.5em;
-}
-
-.facebook{
-  background: #3B5998; 
-}
-
-.twitter{
-  background: #00ACED;
-}
-
-.google-plus{
-  background: #D14836
-}
-</style>
-
-
-
-
-		<?php 
+<?php 
 $logged_in=$this->session->userdata('logged_in');
 
 if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
@@ -153,29 +83,6 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
 </td>
 
 <td>
-
-<?php 
-
-if($this->config->item('social_share') == true ){ 
-?>
-<ul class="sharing-buttons">
-  <li>
-  <a class="facebook"  href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("Hey, I have taken this ".$result->quiz_name." quiz on  ".base_url().". My score is ".$result->score."/".(count(explode(',',$result->qids)) * $result->correct_score).". ");?>" target="_blank"><i class="fa fa-facebook-square"></i>Share on Facebook</a>
-	</li>
-  <li>
-	<a  class="twitter"  href="https://twitter.com/intent/tweet?url=&text=<?php echo urlencode("Hey, I have taken this ".$result->quiz_name." quiz on  ".base_url().". My score is ".$result->score."/".(count(explode(',',$result->qids)) * $result->correct_score).". ");?>&via=" target="_blank"><i class="fa fa-twitter-square"></i>Tweet</a>
- </li>
-  <li>
- 		<a class="google-plus" href="https://plus.google.com/share?url=<?php echo urlencode(base_url());?>" target="_blank"><i class="fa fa-google-plus-square"></i>Share on Google+</a>
- </li>
-</ul>
-<?php 
-}
-?>
-
-
-
-
 
 </td>
 </tr>

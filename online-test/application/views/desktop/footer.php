@@ -2,8 +2,6 @@
 if($this->uri->segment(2) != "access_test"){
 ?>
 
-<div style='padding:20px;border-top:1px solid #dddddd;text-align:right;'>Copyright © <a href='<?php echo $config["base_url"] ?>'>RAPIDOVATIONS</a> 2015</div>
-
 
 <?php
 }
@@ -20,6 +18,15 @@ if($this->uri->segment(2) != "access_test"){
 	</div>
 
 </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; RAPIDOVATIONS 2015</span>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <?php 
 }

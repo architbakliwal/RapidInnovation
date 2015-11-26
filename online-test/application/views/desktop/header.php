@@ -44,15 +44,15 @@
  
 
 
-    <?php
- if($this->session->userdata('logged_in'))
-   {
-   $logged_in=$this->session->userdata('logged_in');
-   ?>
+<?php
+if($this->session->userdata('logged_in'))
+  {
+    $logged_in=$this->session->userdata('logged_in');
+?>
    <div id="wrapper">
 
 <?php 
-if($this->uri->segment(2) != "access_test"){ 
+if($this->uri->segment(2) != "access_test") { 
 ?>
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
               <div class="navbar-header">
@@ -66,9 +66,60 @@ if($this->uri->segment(2) != "access_test"){
               </div>
               <!-- /.navbar-header -->
 
-              <ul class="nav navbar-top-links navbar-right">
-                
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                  <li>
+                      <a href="<?php echo site_url('home');?>"  ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                  </li>
 
+                  <?php 
+                 if($logged_in['su']=="1"){ ?>
+                 <li>
+                 <a href="<?php echo site_url('user_data');?>" ><i class="fa fa-users fa-fw"></i> Users</a>
+                 </li>
+                 <?php
+                 }
+                 ?>
+                  <?php 
+                 if($logged_in['su']=="1"){ ?>
+                  <li>
+                      <a href="<?php echo site_url('qbank');?>"  ><i class="fa fa-question fa-fw"></i> Question Bank</a>
+                  </li>
+                  <?php 
+                }
+                ?>
+                  <li>
+                      <a href="<?php echo site_url('quiz');?>" ><i class="fa fa-check fa-fw"></i> Quiz</a>
+                  </li>
+                  <li>
+                  <?php 
+                 if($logged_in['su']=="1"){ ?>
+                     <a href="<?php echo site_url('result/');?>"  ><i class="fa fa-line-chart fa-fw"></i> Result</a>
+                  <?php 
+                  }else{
+                  ?>
+                    <a href="<?php echo site_url('result/user');?>"  ><i class="fa fa-line-chart fa-fw"></i> Result</a>
+
+                  <?php 
+                  }
+                  ?>
+                </li>
+
+                 <!-- <li>
+                 <a href="<?php echo site_url('liveclass');?>" ><i class="fa fa-desktop fa-fw"></i> Live Classroom</a>
+                 </li> -->
+
+                  <?php 
+                  if($logged_in['su']=="1"){ ?>
+                  <li>
+                      <a href="<?php echo site_url('home/setting');?>"  ><i class="fa fa-cog fa-fw"></i> Setting</a>
+                  </li>
+                  <?php 
+                  }
+                  ?>
+                </ul>
+
+                <ul class="nav navbar-top-links navbar-right">
                   <!-- /.dropdown -->
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -88,68 +139,11 @@ if($this->uri->segment(2) != "access_test"){
                       <!-- /.dropdown-user -->
                   </li>
                   <!-- /.dropdown -->
-              </ul>
+                </ul>
               <!-- /.navbar-top-links -->
-
-              <div class="navbar-default sidebar" role="navigation" >
-                  <div class="sidebar-nav navbar-collapse" aria-expanded="false" style="height: 1px;">
-                      <ul class="nav in" id="side-menu">
-                          
-                          <li>
-                              <a href="<?php echo site_url('home');?>"  ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                          </li>
-
-                          <?php 
-                         if($logged_in['su']=="1"){ ?>
-                         <li>
-                         <a href="<?php echo site_url('user_data');?>" ><i class="fa fa-users fa-fw"></i> Users</a>
-                         </li>
-                         <?php
-                         }
-                         ?>
-                          <?php 
-                         if($logged_in['su']=="1"){ ?>
-                          <li>
-                              <a href="<?php echo site_url('qbank');?>"  ><i class="fa fa-question fa-fw"></i> Question Bank</a>
-                          </li>
-                          <?php 
-                        }
-                        ?>
-                          <li>
-                              <a href="<?php echo site_url('quiz');?>" ><i class="fa fa-check fa-fw"></i> Quiz</a>
-                          </li>
-                          <li>
-                          <?php 
-                         if($logged_in['su']=="1"){ ?>
-                             <a href="<?php echo site_url('result/');?>"  ><i class="fa fa-line-chart fa-fw"></i> Result</a>
-                          <?php 
-                        }else{
-                          ?>
-                            <a href="<?php echo site_url('result/user');?>"  ><i class="fa fa-line-chart fa-fw"></i> Result</a>
- 
-                          <?php 
-                        }
-                        ?>
-                        </li>
-
-                         <!-- <li>
-                         <a href="<?php echo site_url('liveclass');?>" ><i class="fa fa-desktop fa-fw"></i> Live Classroom</a>
-                         </li> -->
-
-                          <?php 
-                         if($logged_in['su']=="1"){ ?>
-                          <li>
-                              <a href="<?php echo site_url('home/setting');?>"  ><i class="fa fa-cog fa-fw"></i> Setting</a>
-                          </li>
-                          <?php 
-                        }
-                        ?>
- 
-                      </ul>
-                  </div>
-                  <!-- /.sidebar-collapse -->
               </div>
-              <!-- /.navbar-static-side -->
+
+              
      </nav>
 
 <?php 

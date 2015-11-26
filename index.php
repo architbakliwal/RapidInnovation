@@ -149,19 +149,12 @@
                 </div>
             </div>
             <div class="row">
-                <p>Welcome to RAPIDOVATIONS – You are at the right place if you have high career aspirations and want to increase your employability.
-                    <br />
-                    <br /> <i>“Increase my employability!!! What do you mean? I’m already into a good college and quite strong in my academics, then why do I need you!?”</i> If you are thinking the same – then let us elaborate on that...
-                    <br />
-                    <br />To get placed in a company of your choice, it’s not just sufficient to be strong on fundamentals of your field of study. It’s equally important to have good aptitude skills and soft skills. The employers want to know how trainable you are, whether or not you are fit to work in a team and if you have that right attitude for the job.
-                    <br />
-                    <br />So... We at RAPID Innovations develop those required skill sets which will help you make an impression on the interviewer and increase your chances of getting that dream job of yours. We have an exhaustive plan which covers all the scenarios that you will face while sitting for placements.
-                    <br />
-                    <br /> And well, yeah... it’s not just about taking you through boring classroom sessions giving you tips and tricks, we also work on improving your overall personality by engaging you in various activities, fun learning and competitions.
-                    <br />
-                    <br />BTW, RAPID is actually an abbreviation – Ruchir, Abhishek, Prasoon and Deepak – the 4 founding members, all having work experience in diversified technology MNCs. Thinking about what that “I” is doing in between? Well, we thought of using it for Innovations so that the name makes some sense.
-                    <br />
-                    <br /> That’s all folks... Just have a look at <a class="page-scroll" href="#whyrapid">Why RAPID</a> to know about what differentiates us.</p>
+                <p>RAPIDOVATIONS is here to make engineering freshers industry ready. We are here to guide the students on how to face the campus recruitment processes. We provide trainings (rather we would call it as “guidance”) to engineering students in their college campus – with well crafted courses covering various topics. Please read on to know more about who we are and how we can help you.
+                </br></br>
+                RAPIDOVATIONS was founded by four members – Ruchir, Abhishek, Prasoon and Deepak – all engineers. After entering the corporate world we realised why we often get to hear that the employability of a graduate in this country is so low! With the motive of addressing the common concern of the employers while hiring a fresh graduate; we are here to bridge the gap between students’ perception of employability and those of employers. Just scoring good marks is not sufficient to secure a good job. We guide the students in developing certain essential skills which make them not only competent enough to secure that dream job, but also achieve great heights in their professional lives.
+                </br></br>
+                We believe in long term engagement with the students so that every student gets ample time to gradually improve their skill sets. Apart from classroom trainings, we provide students with an excellent forum where they can get their queries answered directly from industry experts and placements oriented online tests.
+                </p>
             </div>
         </div>
     </section>
@@ -337,9 +330,9 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        <li><a href="https://twitter.com/rapidovations"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        <li><a href="https://www.facebook.com/Rapidovations"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a>
                         </li>

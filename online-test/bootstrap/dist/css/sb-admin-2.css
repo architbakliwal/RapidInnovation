@@ -21,7 +21,7 @@ body {
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 250px;
+        /*margin: 0 0 0 250px;*/
         padding: 0 30px;
         border-left: 1px solid #e7e7e7;
     }
@@ -350,4 +350,15 @@ table.dataTable thead .sorting:after {
 
 .panel-yellow a:hover {
     color: #df8a13;
+}
+
+.alert-success {
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+    margin: 10px 0;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
 }
