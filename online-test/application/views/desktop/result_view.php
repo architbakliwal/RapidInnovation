@@ -76,11 +76,11 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
 <table id="detail">
 <tr><td ><a href="<?php echo site_url('result/view_answer/'.$result->rid );?>" class="btn btn-success">View Answers</a></td>
 
-<td>
+<!-- <td>
 
 <a href="javascript:print();" class="btn btn-warning" style="margin-left:20px;">Print</a>
 
-</td>
+</td> -->
 
 <td>
 

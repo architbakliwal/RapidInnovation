@@ -97,9 +97,9 @@ qtime+=1;
 	<script type="text/javascript">window.onload = CreateTimer("timer", <?php echo $seconds;?>);</script>
 	</div>
 </div>
-<div style="float:right;">
+<!-- <div style="float:right;">
 <a href="javascript:fontsize();" title="Change Font Size"><img src="<?php echo base_url();?>images/font-size.gif"></a>
-</div>
+</div> -->
 <div style="clear:both;"></div>
 
 <div  id="left_div" style="width:70%;">
@@ -190,7 +190,7 @@ if ($result->pract_test=="1"){
 </td>
 </tr>
 <?php } ?>
-<tr  style="position:fixed; bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;">
+<tr  style=" bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;">
 
 
 <td> 
@@ -269,7 +269,7 @@ if ($result->pract_test=="1"){
 <?php } ?>
 
 <!-- Explanation end-->
-<tr style="position:fixed; bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
+<tr style=" bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
 <?php
 if ($result->pract_test=="1"){
 ?>
@@ -342,7 +342,7 @@ if ($result->pract_test=="1"){
 
 
 
-<tr  style="position:fixed; bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
+<tr  style=" bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
 <?php
 if ($result->pract_test=="1"){
 ?>
@@ -414,7 +414,7 @@ if ($result->pract_test=="1"){
 
 
 
-<tr  style="position:fixed; bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
+<tr  style=" bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
 <?php
 if ($result->pract_test=="1"){
 ?>
@@ -473,7 +473,7 @@ $opcount+=1;
 }
 }
 ?>
-<tr  style="position:fixed; bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
+<tr  style=" bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
 <?php
 if($key >="1"){
 ?>
@@ -600,7 +600,7 @@ if ($result->pract_test=="1"){
 
 
 
-<tr  style="position:fixed; bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
+<tr  style=" bottom:0px;left:0px;padding:5px;background:#ffffff;border-top:1px solid #ddd;width:100%;max-height:65px;"><td> 
 <?php
 if ($result->pract_test=="1"){
 ?>

@@ -52,7 +52,7 @@ if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
 	$db['default']['hostname'] = '127.0.0.1';
 	$db['default']['username'] = 'root';
 	$db['default']['password'] = '';
-	$db['default']['database'] = 'assignment';
+	$db['default']['database'] = 'question2answer';
 } else {
 	$db['default']['hostname'] = 'localhost';
 	$db['default']['username'] = 'rapid_forum';

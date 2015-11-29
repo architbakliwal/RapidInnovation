@@ -60,10 +60,17 @@ if($logged_in['su']=="1"){
                                 <table class="table table-hover">
                                     <thead>
 									<tr><th >Id</th>
+									<?php
+										if($logged_in['su']=="1" && $logged_in['id']=="1"){
+									?>
 									<th>Username</th>
 									<th>First name</th>
 									<th>Last name</th>
+									<?php
+										}
+									?>
 									<th>Quiz name</th>
+									<th>Date Taken</th>
 									<th>Score</th>
 									<th>Percentage</th>
 									<th>Result</th>
@@ -82,14 +89,22 @@ No record foud!
 
 }else{
 foreach($result as $row){
+	// print_r(($row));
 ?>									
 									
 									<tr>
 <td data-th="ID"><?php echo $row->rid;?></td>
+<?php
+if($logged_in['su']=="1" && $logged_in['id']=="1"){
+?>
 <td data-th="Username"><?php echo $row->username;?></td>
 <td data-th="First Name"><?php echo $row->first_name;?></td>
 <td data-th="Last Name"><?php echo $row->last_name;?></td>
+<?php
+}
+?>
 <td data-th="Quiz Name"><?php echo $row->quiz_name;?></td>
+<td data-th="Date Taken"><?php echo date('d-M-Y', ($row->last_response));?></td>
 <td data-th="Score"><?php echo $row->score;?></td>
 <td data-th="Percentage"><?php echo substr($row->percentage , 0, 5 );?>%</td>
 <td data-th="Result"><?php if($row->q_result == "1"){  echo "Pass"; }else if($row->q_result == "0"){ echo "Fail"; }else{ echo "Pending"; } ?> </td>

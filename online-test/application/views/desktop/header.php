@@ -42,7 +42,13 @@
 
 <script type="text/javascript" src="<?php echo base_url();?>/js/basic.js?rd=<?php echo time();?>"></script>
  
-
+<?php 
+  if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
+      $baseurl = 'http://127.0.0.1/rapid/';
+  } else {
+    $baseurl = 'http://rapidovations.com/';
+  }
+?>
 
 <?php
 if($this->session->userdata('logged_in'))
@@ -62,7 +68,7 @@ if($this->uri->segment(2) != "access_test") {
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="<?php echo base_url();?>">Rapidovations</a>
+                  <a class="navbar-brand" href="<?php echo $baseurl;?>">Rapidovations</a>
               </div>
               <!-- /.navbar-header -->
 
