@@ -168,9 +168,9 @@ $user_id=$logged_in['id'];
      $qtime[]=array('Question Number','Time in Seconds');
      foreach(explode(",",$data['result']->time_spent_ind) as $key => $val){
        if($correct_incorrect[$key]>="0.1"){
-	 $qtime[]=array("Q ".($key+1).") - Correct/Partially Correct",intval($val));
+	 $qtime[]=array("Q ".($key+1).") - Correct",intval($val));
 	 }else if($correct_incorrect[$key]==0 && $oidss[$key]!=0 ){
-	  $qtime[]=array("Q ".($key+1).") - Wrong ",intval($val));
+	  $qtime[]=array("Q ".($key+1).") - Incorrect ",intval($val));
 	 }else{
 	  $qtime[]=array("Q ".($key+1).") - UnAttempted ",intval($val));
 	 }

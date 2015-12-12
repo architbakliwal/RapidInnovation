@@ -694,7 +694,7 @@ if($photo!=""){ ?><img src="<?php echo base_url('photo/'.$photo);?>" style="widt
 }
 ?>
 
-<div  id="warning_div" style="padding:10px; position:fixed;z-index:100;display:none;width:100%;border-radius:5px;height:200px; border:1px solid #dddddd;left:4px;top:70px;background:#ffffff;" >
+<div  id="warning_div" style="padding:10px; position:fixed;z-index:100;display:none;width:100%;border-radius:5px;height:100%; border:1px solid #dddddd;left:0px;top:0px;background:#ffffff;" >
 <center><b>Do you really want to submit Quiz? </b><br><br>
 <a href="javascript:pre_sbtform();"   class="btn btn-danger"  style="cursor:pointer;" >Cancel</a> &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="javascript:sbtform();"   class="btn btn-info" style="cursor:pointer;">Submit Quiz</a>

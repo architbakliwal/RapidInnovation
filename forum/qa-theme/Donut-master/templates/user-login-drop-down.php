@@ -4,7 +4,7 @@ $print_or = false ;
 <li class="dropdown login-dropdown login active"> 
 	<a href="#" title="<?php echo qa_lang_html('users/login_title'); ?>" data-toggle="dropdown" class="navbar-login-button">
 		<?php //echo qa_lang_html('users/login_button'); ?>
-		<span class="fa fa-key"></span>
+		Login <span class="fa fa-key"></span>
 	</a>
 	<ul class="dropdown-menu" role="menu" id="login-dropdown-menu">
 		<?php      

@@ -24,8 +24,8 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 <tr><th >Quiz Name</th><td><b><?php echo $result->quiz_name;?></b></td></tr>
 <tr><td valign="top" colspan="2"><b>Description / Instructions</b> <?php echo $result->description;?></td></tr>
 <tr><th valign="top">Duration</th><td><?php echo $result->duration;?> Minutes</td></tr>
-<tr><th valign="top">Start time</th><td><?php echo date("Y-m-d",$result->start_time);?></td></tr>
-<tr><th valign="top">End time</th><td><?php echo date("Y-m-d",$result->end_time);?></td></tr>
+<tr><th valign="top">Start date</th><td><?php echo date("Y-m-d",$result->start_time);?></td></tr>
+<tr><th valign="top">End date</th><td><?php echo date("Y-m-d",$result->end_time);?></td></tr>
 <tr><th valign="top">Percentage required to pass</td><td><?php echo $result->pass_percentage;?>%</td></tr>
 <tr><th valign="top">Test type</th><td><?php if($result->test_type=="1"){ echo "Paid ( credit require: ".$result->credit.")"; }else{ echo "Free"; } ?>
 <tr><th valign="top">Maximum Attempts</th><td><?php echo $result->max_attempts;?> </td></tr>

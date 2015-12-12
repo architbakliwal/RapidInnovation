@@ -19,8 +19,8 @@ if($logged_in['su']=="1"){
  <select name="search_type" class="form-control"   style="width:150px;float:left;"  >
 <option value="quiz.quid">ID</option>
 <option value="quiz.quiz_name">Quiz Name</option>
-<option value="quiz.start_time">Start time</option>
-<option value="quiz.end_time">End time</option>
+<option value="quiz.start_time">Start date</option>
+<option value="quiz.end_time">End date</option>
 <option value="quiz.duration">Duration</option>
 </select>  
 <input type="text" name="search" class="form-control" style="width:150px;float:left;margin-left:10px;" value=""> 
@@ -47,7 +47,7 @@ if($logged_in['su']=="1"){
                             <form method="post" action="<?php echo site_url('qbank/remove_qids/'.$limit);?>" id="removeqids">
                                 <table class="table table-hover">
                                     <thead>
-                                        <tr><th>Id</th><th>Quiz name</th><th>Start time</th><th>End time</th><th>Duration</th><th>Action</th></tr>
+                                        <tr><th>Id</th><th>Quiz name</th><th>Start date</th><th>End date</th><th>Duration</th><th>Action</th></tr>
 
                                     </thead>
                                     <tbody>
