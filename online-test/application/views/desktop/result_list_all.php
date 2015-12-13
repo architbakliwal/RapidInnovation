@@ -153,9 +153,10 @@ if($logged_in['su']=="1") {
 &nbsp;&nbsp;
 <?php $next=$limit+($this->config->item('number_of_rows'));  ?>
 
-<?php echo $next .'-'. $this->config->item('number_of_rows') .'-'. $limit .'-'. count($result);?>
+<!-- <?php echo $next .'-'. $this->config->item('number_of_rows') .'-'. $limit .'-'. count($result);?> -->
+<!-- if(count($result) > $next) -->
 
-<?php if(count($result) > $next) { ?>
+<?php if(true) { ?>
 	<a href="<?php echo site_url('result/index/'.$next);?>"   class="btn btn-primary">Next</a>
 <?php } ?>
 
@@ -168,7 +169,7 @@ if($logged_in['su']=="1") {
 &nbsp;&nbsp;
 <?php $next=$limit+($this->config->item('number_of_rows'));  ?>
 
-<?php echo $next .'-'. $this->config->item('number_of_rows') .'-'. $limit .'-'. count($result);?>
+<!-- <?php echo $next .'-'. $this->config->item('number_of_rows') .'-'. $limit .'-'. count($result);?> -->
 
 <?php if(true) { ?>
 	<a href="<?php echo site_url('result/user/'.$next);?>"  class="btn btn-primary">Next</a>
