@@ -6,6 +6,8 @@ class Result extends CI_Controller {
  {
    parent::__construct();
      $this->load->model('result_model','',TRUE);
+     $this->load->model('difficult_level','',TRUE);
+     $this->load->model('category','',TRUE);
     if(!$this->session->userdata('logged_in'))
    {
    redirect('login');
@@ -211,7 +213,9 @@ $user_id=$logged_in['id'];
 	$data['assigned_question'] = $this->result_model->get_question($id);
 	$data['title']="Result"; 
 	$data['id']=$id;
-     $data['correct_incorrect']=explode(",",$data['result']->score_ind);
+	$data['correct_incorrect']=explode(",",$data['result']->score_ind);
+	$data['difficulty_level'] = $this->difficult_level->get_difficulty_levels();
+	$data['categories'] = $this->category->get_categories();
  
 	$this->load->view($this->session->userdata('web_view').'/header',$data);
    $this->load->view($this->session->userdata('web_view').'/view_answer',$data);

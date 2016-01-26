@@ -278,7 +278,8 @@
 	switch ($adminsection) {
 		case 'general':
 			$subtitle = 'admin/general_title';
-			$showoptions = array('site_title', 'site_url', 'neat_urls', 'site_language', 'site_theme', 'site_theme_mobile', 'site_text_direction', 'tags_or_categories', 'site_maintenance');
+			// $showoptions = array('site_title', 'site_url', 'neat_urls', 'site_language', 'site_theme', 'site_theme_mobile', 'site_text_direction', 'tags_or_categories', 'site_maintenance');
+			$showoptions = array('site_title', 'site_url', 'site_language', 'site_maintenance');
 			break;
 
 		case 'emails':
@@ -441,8 +442,8 @@
 
 			$showoptions = array('do_close_on_select', 'allow_close_questions', 'allow_self_answer', 'allow_multi_answers', 'follow_on_as', 'comment_on_qs', 'comment_on_as', '');
 
-			if (count(qa_list_modules('editor'))>1)
-				array_push($showoptions, 'editor_for_qs', 'editor_for_as', 'editor_for_cs', '');
+			/*if (count(qa_list_modules('editor'))>1)
+				array_push($showoptions, 'editor_for_qs', 'editor_for_as', 'editor_for_cs', '');*/
 
 			array_push($showoptions, 'show_custom_ask', 'custom_ask', 'extra_field_active', 'extra_field_prompt', 'extra_field_display', 'extra_field_label', 'show_custom_answer', 'custom_answer', 'show_custom_comment', 'custom_comment', '');
 

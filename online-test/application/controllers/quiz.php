@@ -195,46 +195,46 @@ $data['resultstatus']=$this->quiz_model->remove_quiz($id);
 		$data['quiz_id']=$id;
 		$data['result'] = $this->quiz_model->quiz_detail($id);
 		$data['title']=$data['result']->quiz_name;
-		if($data['resultstatus'] == "1"){
-		if(!$this->input->cookie('rid', TRUE)){
-		redirect('quiz/access_test/'.$id, 'refresh');
-		}
-		$rid=$this->input->cookie('rid', TRUE);
-		//get the question answer 
-		$data['user_answer']=$this->quiz_model->get_user_answer($rid);
-		$question_user_ans=array();
-		
-		foreach($data['user_answer'] as $val_ans){
-			$question_user_ans[$val_ans['q_id']]=$val_ans['essay_cont'];
+		if($data['resultstatus'] == "1") {
+			if(!$this->input->cookie('rid', TRUE)){
+				redirect('quiz/access_test/'.$id, 'refresh');
+			}
+			$rid=$this->input->cookie('rid', TRUE);
+			//get the question answer 
+			$data['user_answer']=$this->quiz_model->get_user_answer($rid);
+			$question_user_ans=array();
 			
-		}
+			foreach($data['user_answer'] as $val_ans){
+				$question_user_ans[$val_ans['q_id']]=$val_ans['essay_cont'];
+				
+			}
+			
+			$data['question_user_ans']=$question_user_ans;
+			// get assignied questions
+			$data['assigned_question']=$this->quiz_model->get_question($rid);
+			// get time information
+			$data['time_info']=$this->quiz_model->get_time_info($rid);
+			
+			// time remaining in seconds
+			// total time - time spent
+			$data['seconds']=(($data['result']->duration)*60) - ($data['time_info']['time_spent']);
+			
+			// get quiz data like quiz duration, title
+			$data['quiz_data']=$this->quiz_model->get_quiz_data($id);
+			
+			// load quiz access page
+			$this->load->view($this->session->userdata('web_view').'/header',$data);
+			$this->load->view($this->session->userdata('web_view').'/quiz_access',$data);
+		  	$this->load->view($this->session->userdata('web_view').'/footer',$data);
+			
 		
-		$data['question_user_ans']=$question_user_ans;
-		// get assignied questions
-		$data['assigned_question']=$this->quiz_model->get_question($rid);
-		// get time information
-		$data['time_info']=$this->quiz_model->get_time_info($rid);
-		
-		// time remaining in seconds
-		// total time - time spent
-		$data['seconds']=(($data['result']->duration)*60) - ($data['time_info']['time_spent']);
-		
-		// get quiz data like quiz duration, title
-		$data['quiz_data']=$this->quiz_model->get_quiz_data($id);
-		
-		// load quiz access page
-		$this->load->view($this->session->userdata('web_view').'/header',$data);
-		$this->load->view($this->session->userdata('web_view').'/quiz_access',$data);
-	  	$this->load->view($this->session->userdata('web_view').'/footer',$data);
-		
-		
-		}else{
-		// load quiz detail page with error
-		$data['result'] = $this->quiz_model->quiz_detail($id);
-		$data['title']=$data['result']->quiz_name;
-		$this->load->view($this->session->userdata('web_view').'/header',$data);
-		$this->load->view($this->session->userdata('web_view').'/quiz_detail',$data);
-	  	$this->load->view($this->session->userdata('web_view').'/footer',$data);
+		} else {
+			// load quiz detail page with error
+			$data['result'] = $this->quiz_model->quiz_detail($id);
+			$data['title']=$data['result']->quiz_name;
+			$this->load->view($this->session->userdata('web_view').'/header',$data);
+			$this->load->view($this->session->userdata('web_view').'/quiz_detail',$data);
+		  	$this->load->view($this->session->userdata('web_view').'/footer',$data);
 		}
 		
 	}

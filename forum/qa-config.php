@@ -16,7 +16,7 @@
 		define('QA_MYSQL_DATABASE', 'rapid_forum');
 	}
 
-	error_reporting(0);
+	// error_reporting(0);
 
 /*
 	Ultra-concise installation instructions:

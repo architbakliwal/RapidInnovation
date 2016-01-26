@@ -7,6 +7,7 @@ class Home extends CI_Controller {
    parent::__construct();
    $this->load->model('result_model','','TRUE');
    $this->load->model('user','','TRUE');
+   // print_r("h1");
    if(!$this->session->userdata('logged_in'))
    {
    redirect('login', 'refresh');
@@ -17,6 +18,8 @@ class Home extends CI_Controller {
  {
     $session_data = $this->session->userdata('logged_in');
      $data['username'] = $session_data['username'];
+     // print_r("h2");
+     // die();
      if($session_data['su']!="1"){
      $user_id=$session_data['id'];
      $result = $this->result_model->user_last_ten_results($user_id);
@@ -54,7 +57,7 @@ class Home extends CI_Controller {
      }
 	 
 	  	 
-    
+    // print_r("h3");
  }
 
  function setting()

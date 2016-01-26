@@ -1,8 +1,7 @@
 		<?php 
 $logged_in=$this->session->userdata('logged_in');
 
-if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
- ?> 	
+if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; } else { ?>
 <div class="row" style="margin-top:10px;">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -24,8 +23,8 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 <tr><th >Quiz Name</th><td><b><?php echo $result->quiz_name;?></b></td></tr>
 <tr><td valign="top" colspan="2"><b>Description / Instructions</b> <?php echo $result->description;?></td></tr>
 <tr><th valign="top">Duration</th><td><?php echo $result->duration;?> Minutes</td></tr>
-<tr><th valign="top">Start date</th><td><?php echo date("Y-m-d",$result->start_time);?></td></tr>
-<tr><th valign="top">End date</th><td><?php echo date("Y-m-d",$result->end_time);?></td></tr>
+<tr><th valign="top">Available from</th><td><?php echo date("Y-m-d",$result->start_time);?></td></tr>
+<tr><th valign="top">Available till</th><td><?php echo date("Y-m-d",$result->end_time);?></td></tr>
 <tr><th valign="top">Percentage required to pass</td><td><?php echo $result->pass_percentage;?>%</td></tr>
 <tr><th valign="top">Test type</th><td><?php if($result->test_type=="1"){ echo "Paid ( credit require: ".$result->credit.")"; }else{ echo "Free"; } ?>
 <tr><th valign="top">Maximum Attempts</th><td><?php echo $result->max_attempts;?> </td></tr>
@@ -47,8 +46,8 @@ if($this->config->item('webcam_plugin') == true && $result->camera_req == "1"){
 </td></tr>
 <tr><td valign="top">
 
-<input type="checkbox" name="agree" id="agree"> Tick this checkbox , if you have read all instructions <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and ready to attempt quiz / test.
-<div id="warning_checkbox"  class="arrow_box" style="display:none;color:#ffffff;background:#D03800;padding:2px; width:150px;">Tick above check box ! </div>
+<input type="checkbox" name="agree" id="agree" onchange = "agree_validate(this)"> Tick this checkbox , if you have read all instructions <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and ready to attempt quiz / test.
+<div id="warning_checkbox"  class="arrow_box" style="display:none;color:#ffffff;background:#D03800;padding:2px; width:150px;">Tick check box ! </div>
 </td><td>
 <input type="button" id="starttestbtn" Value="<?php if($this->config->item('webcam_plugin') == true && $result->camera_req == '1'){ echo 'Capture my photo and '; } ?> Start Test" onClick="javascript:checkbox_validate();"   class="btn btn-success" style="cursor:pointer;">
 <?php
@@ -81,6 +80,8 @@ if($this->config->item('webcam_plugin') == true && $result->camera_req == "1"){
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+
+<?php } ?>
 			
 			
 			
@@ -136,12 +137,21 @@ if($this->config->item('webcam_plugin')){
 <script>
 	function checkbox_validate(){
 
-	if(document.getElementById('agree').checked==true){
-		<?php if($this->config->item('webcam_plugin') == true && $result->camera_req == '1'){ ?>void(take_snapshot());upload_photo();<?php }else{ ?>window.location='<?php echo site_url('quiz/access_test/'.$result->quid);?>';<?php } ?>
+		if(document.getElementById('agree').checked==true) {
+			document.getElementById('warning_checkbox').style.display="none";
+			<?php if($this->config->item('webcam_plugin') == true && $result->camera_req == '1') { ?>
+				void(take_snapshot());upload_photo();<?php 
+			} else { ?>
+				window.location='<?php echo site_url('quiz/access_test/'.$result->quid);?>';<?php 
+			} ?>
 		}else{
-	document.getElementById('warning_checkbox').style.display="block";
+			document.getElementById('warning_checkbox').style.display="block";
 		}
 	
+	}
+
+	function agree_validate(element){
+	    element.checked ? document.getElementById('warning_checkbox').style.display="none" : document.getElementById('warning_checkbox').style.display="block";    
 	}
 	
 </script>

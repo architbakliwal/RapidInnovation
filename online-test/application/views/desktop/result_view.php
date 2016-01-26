@@ -99,6 +99,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable(<?php echo $value;?>);
+        // console.log(data);
 
         var options = {
           title: 'Top 10 results for Quiz:<?php echo $result->quiz_name;?>',
@@ -109,7 +110,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
         chart.draw(data, options);
       }
     </script>
-		 <div id="chart_div" style="width: 800px; height: 500px;"></div>
+		 <div id="chart_div" style="width: 100%; height: 100%;"></div>
 <!-- google chart ends -->
 
 
@@ -121,6 +122,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable(<?php echo $qtime;?>);
+        // console.log(data);
 
         var options = {
           title: 'Time spent on individual question (in seconds)'
@@ -130,7 +132,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
         chart.draw(data, options);
       }
     </script>
-		 <div id="chart_div2" style="width:800px; height: 500px;"></div>
+		 <div id="chart_div2" style="width:100%; height: 100%;"></div>
 <!-- google chart ends -->
 
 
@@ -141,6 +143,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable(<?php echo $ctime;?>);
+        // console.log(data);
 
         var options = {
           title: 'Time spent on categories (in seconds)'
@@ -150,7 +153,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
         chart.draw(data, options);
       }
     </script>
-		 <div id="chart_div3" style="width: 800px; height: 500px;"></div>
+		 <div id="chart_div3" style="width: 100%; height: 100%"></div>
 <!-- google chart ends -->
 
 

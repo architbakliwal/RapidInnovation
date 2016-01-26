@@ -52,7 +52,7 @@ $config['social_share']	= true;
 | Copyright (c) 2012 Joseph Huckaby
 | Licensed under the MIT License
 */
-$config['webcam_plugin'] = true;
+$config['webcam_plugin'] = false;
 /*
 | photo width & height at result page in px. default is 200px
 */

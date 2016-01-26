@@ -18,6 +18,22 @@ Class Difficult_level extends CI_Model
    }
  }
 
+ function get_difficulty_levels()
+ {
+   //$nor=$this->config->item('number_of_rows');
+   $institute_id = $this->session->userdata('institute_id');
+   $query = $this -> db -> query("select * from difficult_level where institute_id = '$institute_id'");
+
+   if($query -> num_rows() >= 1)
+   {
+     return $query->result_array();
+   }
+   else
+   {
+     return false;
+   }
+ }
+
 // get all available level to show a group list in admin side
 	function level_list($limit)
  {

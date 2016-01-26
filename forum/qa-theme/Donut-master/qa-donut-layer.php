@@ -120,10 +120,13 @@ class qa_html_theme extends qa_html_theme_base {
 			$this->widgets('full', 'low');
 			$this->footer();
 			$this->widgets('full', 'bottom');
-			
+
+			$this->output('<a href="./index.php?qa=feedback">Send feedback</a>');
+
 			$this->output('</div> <!-- END body-wrapper -->');
+			// $this->output('<iframe id="oiframe" src="http://127.0.0.1/rapid/online-test/" style=""></iframe>');
 			
-			$this->body_suffix();
+			// $this->body_suffix();
 		}
 
 		function main()

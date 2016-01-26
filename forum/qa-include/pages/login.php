@@ -34,8 +34,15 @@
 	if (qa_is_logged_in())
 		qa_redirect('');
 
+	if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
+	    $mainurl = 'http://127.0.0.1/rapid/';
+	} else {
+		$mainurl = 'http://rapidovations.com/';
+	}
 
 //	Process submitted form after checking we haven't reached rate limit
+
+	define('ONLINE_TEST_PATH', dirname( __FILE__ ).'/../../../online-test/');
 
 	$passwordsent=qa_get('ps');
 	$emailexists=qa_get('ee');
@@ -46,6 +53,8 @@
 
 	if (qa_clicked('dologin') && (strlen($inemailhandle) || strlen($inpassword)) ) {
 		require_once QA_INCLUDE_DIR.'app/limits.php';
+		require_once QA_INCLUDE_DIR.'app/limits.php';
+		// require_once ONLINE_TEST_PATH.'application/controllers/verifylogin.php';
 
 		if (qa_user_limits_remaining(QA_LIMIT_LOGINS)) {
 			require_once QA_INCLUDE_DIR.'db/users.php';
@@ -74,9 +83,44 @@
 						qa_set_logged_in_user($inuserid, $userinfo['handle'], !empty($inremember));
 
 						$topath=qa_get('to');
+						$extpath=qa_get('extto');
 
+						// error_reporting(E_ALL);
+
+						/*echo '<script type="text/javascript" src="'.$mainurl.'online-test/js/jquery.js"></script>
+						<script type="text/javascript">
+							$("#ioframe").attr("src", "'.$mainurl.'online-test/");
+				        </script>';*/
+
+				        // $fp = fopen(ONLINE_TEST_PATH.'logs/errorlog.txt', 'w+');
+
+				        /*$ch = curl_init();
+
+						curl_setopt($ch, CURLOPT_URL, $mainurl."online-test/index.php/verifylogin");
+						curl_setopt($ch, CURLOPT_POST, 1);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, "username=".$inemailhandle."&password=".$inpassword);
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						curl_setopt($ch, CURLOPT_CONNECTTIMEOUT ,3);
+						curl_setopt($ch, CURLOPT_TIMEOUT, 20);*/
+						// curl_setopt($ch, CURLOPT_VERBOSE, 1);
+   						// curl_setopt($ch, CURLOPT_STDERR, $fp);
+
+						/*$server_output = curl_exec ($ch);
+
+						curl_close ($ch);
+
+						print_r($server_output);*/
+
+						// die();
+
+
+						// $verifylogin = new verifylogin;
+						// $verifylogin.super_log_into_admin(11,1);
 						if (isset($topath))
 							qa_redirect_raw(qa_path_to_root().$topath); // path already provided as URL fragment
+						elseif (isset($extpath))
+							qa_redirect_raw($mainurl.$extpath.'/');
+							// die();
 						elseif ($passwordsent)
 							qa_redirect('account');
 						else

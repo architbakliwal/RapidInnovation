@@ -101,7 +101,7 @@
         chart.draw(data, {width: 400, height: 240, is3D: true, colors:[{color:'#e3301d', darker:'#b01808'}],axisFontSize:12,title: 'Last 10 Results'});
       }
     </script>
-	<div id="chart_div2" style="float:left;width:700px;height:300px;margin-right:20px;">
+	<div id="chart_div2" style="float:left;width:100%;height:100%;margin-right:20px;">
 
 	</div>
 	
@@ -113,8 +113,7 @@
 <h2 style="color:#666666">Steps for Quick Start</h2>
 
 1) Go to Settings -> Create User Groups, Question Categories and Difficulty level.<br>
-2) Add user -> User can register directly from link provided at login page or you can add user manually.<br>
-3) Go to question Bank and add questions<br>
-4) Go to Quiz and create new quiz, add question from question bank. <br> 
+2) Go to question Bank and add questions<br>
+3) Go to Quiz and create new quiz, add question from question bank. <br> 
 
 </div>

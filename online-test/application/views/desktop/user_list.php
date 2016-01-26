@@ -64,7 +64,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 								<td  data-th="Email"><?php echo $row->email;?></td>
 								<td  data-th="Action"><a href="javascript: if(confirm('Do you really want to remove this user?')){ window.location='<?php echo site_url('user_data/remove_user/'.$row->id );?>'; }" class="btn btn-danger btn-xs">Remove</a> 
 								<a href="<?php echo site_url('user_data/edit_user/'.$row->id );?>" class="btn btn-info btn-xs">Edit</a>
-								<a href="<?php echo site_url('user_data/login_user_by_admin/'.$row->id );?>" class="btn btn-warning btn-xs">Login</a></td>
+								<!-- <a href="<?php echo site_url('user_data/login_user_by_admin/'.$row->id );?>" class="btn btn-warning btn-xs">Login</a> --></td>
 								</tr>
 								<?php
 								}

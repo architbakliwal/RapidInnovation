@@ -53,26 +53,26 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 
 										 
 	                                       <div class="form-group">
-                                            <label>Assign to Groups</label>
+                                            <label>Assign to Groups: &nbsp;</label>
 		                                          <?php
 													$group_counter = 1; 
 													foreach($groups as $key => $group){ ?>
-														<?php echo $group['group_name']; ?><input type="checkbox" name="assigned_groups[]" value="<?php echo $group['gid']; ?>"> &nbsp;&nbsp;
+														<?php echo $group['group_name']; ?> &nbsp;<input type="checkbox" name="assigned_groups[]" value="<?php echo $group['gid']; ?>"> &nbsp;&nbsp;
 													<?php if($group_counter%5 == 0){ echo "</br>"; } $group_counter++; }  ?>
                                          </div>
 
 										 
 	                                       <div class="form-group">
-                                            <label>Test type </label>
-		                                       <input type='radio' name='test_type' value='0'  checked='checked'    >  Free
+                                            <label>Test type: &nbsp;</label>
+		                                       <input type='radio' name='test_type' value='0'  checked='checked'>  Free
 													<input type="hidden" name="test_charges" value="0"> 
                                          </div>
 
 										 
 	                                       <div class="form-group">
                                             <label>Allow to View Answer </label> &nbsp;&nbsp;
-		                                          		<input type='radio' name='view_answer' value='1' >Yes &nbsp;&nbsp;&nbsp;
-														<input type='radio' name='view_answer' value='0' >No  
+		                                          		<input type='radio' name='view_answer' value='1' > Yes &nbsp;&nbsp;&nbsp;
+														<input type='radio' name='view_answer' value='0' > No  
                                          </div>
 
 									  <div class="form-group">

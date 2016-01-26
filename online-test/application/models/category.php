@@ -37,6 +37,21 @@ function category_list($limit)
    }
  }
 
+ function get_categories()
+ {
+   //$nor=$this->config->item('number_of_rows');
+   $query = $this -> db -> query("select * from question_category");
+
+   if($query -> num_rows() >= 1)
+   {
+     return $query->result_array();
+   }
+   else
+   {
+     return false;
+   }
+ }
+
  function remove_category($cid)
  {
    $institute_id = $this->session->userdata('institute_id');

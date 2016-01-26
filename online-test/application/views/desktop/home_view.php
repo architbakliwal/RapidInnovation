@@ -19,7 +19,7 @@ if($value !='[["Quiz Name","Percentage (%)"]]'){
         chart.draw(data, options);
       }
     </script>
-		 <div id="chart_div" style="width: 900px; height: 500px;"></div>
+		 <div id="chart_div" style="width: 100%; height: 100%"></div>
 		 <?php
 		 }else{
 		 ?>

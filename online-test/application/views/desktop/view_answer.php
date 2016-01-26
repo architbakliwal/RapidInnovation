@@ -45,15 +45,33 @@ $short_ans_pos_not_attempted=array();
 	}
 	
 	
-	//print_r($essay_status);
+//print_r($essay_status);
+
 foreach($assigned_question[0] as $key => $question){
-	//echo $question['q_type'];
-	
+	// print_r($question);
+	// print_r($categories);
+	// print_r($difficulty_level);
+	$category = "";
+	$difficulty = "";
+
+	foreach ($categories as $ckey => $cat) {
+		if($cat['cid'] == $question['cid']) {
+			$category = $cat['category_name'];
+			break;
+		}
+	}
+	foreach ($difficulty_level as $dkey => $diff) {
+		if($diff['did'] == $question['did']) {
+			$difficulty = $diff['level_name'];
+			break;
+		}
+	}
+
 if($question['q_type']=="0"){
 ?>
 
 <table id="ques<?php echo $key;?>" class="<?php if($key=='0'){ echo 'showquestion'; }else{ echo 'hidequestion'; } ?>">
-<tr><td >Question <?php echo $key+1; ?></td></tr>
+<tr><td >Question <?php echo $key+1 . " </br>Category: " . $category . " </br>Difficulty Level: " . $difficulty; ?></td></tr>
 <tr><td> <?php echo $question['question'];?></td></tr>
 <?php
 if($question['description']!=""){
@@ -96,7 +114,7 @@ if($key!=(count($assigned_question['0'])-1)){
 	
 	
 <table id="ques<?php echo $key;?>" class="<?php if($key=='0'){ echo 'showquestion'; }else{ echo 'hidequestion'; } ?>">
-<tr><td >Question <?php echo $key+1; ?></td></tr>
+<tr><td >Question <?php echo $key+1 . " </br>Category: " . $category . " </br>Difficulty Level: " . $difficulty; ?></td></tr>
 <tr><td> <?php echo $question['question'];?></td></tr>
 <?php
 if($question['description']!=""){
@@ -144,7 +162,7 @@ if($key!=(count($assigned_question['0'])-1)){
 	?>
 	
 <table id="ques<?php echo $key;?>" class="<?php if($key=='0'){ echo 'showquestion'; }else{ echo 'hidequestion'; } ?>">
-<tr><td >Question <?php echo $key+1; ?></td></tr>
+<tr><td >Question <?php echo $key+1 . " </br>Category: " . $category . " </br>Difficulty Level: " . $difficulty; ?></td></tr>
 <tr><td> <?php echo $question['question'];?></td></tr>
 <?php
 if($question['description']!=""){
@@ -191,7 +209,7 @@ if($key!=(count($assigned_question['0'])-1)){
 	?>
 	
 <table id="ques<?php echo $key;?>" class="<?php if($key=='0'){ echo 'showquestion'; }else{ echo 'hidequestion'; } ?>">
-<tr><td >Question <?php echo $key+1; ?></td></tr>
+<tr><td >Question <?php echo $key+1 . " </br>Category: " . $category . " </br>Difficulty Level: " . $difficulty; ?></td></tr>
 <tr><td> <?php echo $question['question'];?></td></tr>
 <?php
 if($question['description']!=""){
@@ -248,7 +266,7 @@ if($key!=(count($assigned_question['0'])-1)){
 	
 	?>
 <table id="ques<?php echo $key;?>" class="<?php if($key=='0'){ echo 'showquestion'; }else{ echo 'hidequestion'; } ?>">
-<tr><td >Question <?php echo $key+1; ?></td></tr>
+<tr><td >Question <?php echo $key+1 . " </br>Category: " . $category . " </br>Difficulty Level: " . $difficulty; ?></td></tr>
 <tr><td> <?php echo $question['question'];?></td></tr>
 <?php
 if($question['description']!=""){
@@ -298,7 +316,7 @@ if($key!=(count($assigned_question['0'])-1)){
 	
 	?>
 <table id="ques<?php echo $key;?>" class="<?php if($key=='0'){ echo 'showquestion'; }else{ echo 'hidequestion'; } ?>">
-<tr><td >Question <?php echo $key+1; ?></td></tr>
+<tr><td >Question <?php echo $key+1 . " </br>Category: " . $category . " </br>Difficulty Level: " . $difficulty; ?></td></tr>
 <tr><td> <?php echo $question['question'];?></td></tr>
 <?php
 if($question['description']!=""){

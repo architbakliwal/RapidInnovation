@@ -10,7 +10,7 @@ class Login extends CI_Controller {
 
  function index($web_view='desktop')
  {
- 
+ 	session_start(); //we need to call PHP's session object to access it through CI
  
  $this->load->helper('Mobile-Detect-master/mobile_detect');
  $detect = new Mobile_Detect;
@@ -53,9 +53,12 @@ if($this->session->userdata('logged_in')){
    
    $this->load->helper(array('form'));
    $data['title']="Login";
-   $this->load->view($this->session->userdata('web_view').'/header',$data);
-   $this->load->view($this->session->userdata('web_view').'/login_view',$data);
-  $this->load->view($this->session->userdata('web_view').'/footer',$data);
+   // print_r($this->session);
+   // die();
+   // redirect('http://127.0.0.1/rapid/forum/index.php?qa=login&extto=online-test');
+	$this->load->view($this->session->userdata('web_view').'/header',$data);
+	$this->load->view($this->session->userdata('web_view').'/login_view',$data);
+	$this->load->view($this->session->userdata('web_view').'/footer',$data);
   }
  }
  function status_deactivate(){
