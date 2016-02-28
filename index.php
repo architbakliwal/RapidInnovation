@@ -3,13 +3,13 @@
 
     define('QA_BASE_DIR', dirname( __FILE__ ).'/forum/');
  
-    require QA_BASE_DIR.'qa-include/qa-base.php';
+    /*require QA_BASE_DIR.'qa-include/qa-base.php';
     require QA_BASE_DIR.'qa-include/qa-app-users.php';
     // require_once QA_BASE_DIR.'qa-include/qa-page.php';
     // require_once QA_BASE_DIR.'qa-include/qa-page-login.php';
     require QA_BASE_DIR.'qa-include/pages/login-ext.php';
 
-    $sec_code = qa_html(qa_get_form_security_code('login'));
+    $sec_code = qa_html(qa_get_form_security_code('login'));*/
     
     // if (qa_get_logged_in_userid()===null)
     //     echo 'not logged in';
