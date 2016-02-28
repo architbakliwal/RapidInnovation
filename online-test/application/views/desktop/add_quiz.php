@@ -115,32 +115,8 @@ if($this->config->item('webcam_plugin')){
 <br><br>
 Add questions
 <br><br>
-<div class="category_box" id="qautobtn" style='background:#2f72b7;color:#ffffff;' onClick="changetabqselection('qauto','qman','1');"><a class="tooltip" href="javascript:changetabqselection('qauto','qman','1');" id="qautobtna" style="color:#ffffff;">Automatically <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> System select questions randomly</strong><br />You just need to define category, level and number of questions you want in the quiz. </span></a></div>
-<div class="category_box"  id="qmanbtn" onClick="changetabqselection('qman','qauto','0');"><a class="tooltip" href="javascript:changetabqselection('qman','qauto','0');" id="qmanbtna" style="color:#212121;">Manually <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> Select questions manually</strong><br />You have to select questions one by one from question bank. </span></a></div>
-<div style="clear:both;"></div>
-<div id="qauto"><table id="formdata">
-<tr>
-<td valign="top">Select Category</td><td valign="top">
-	<div class="styled-select black semi-square"  style="width:120px;"><select name="cid" id='cid'>
-	<option value="0">Select</option>
-	<?php foreach($category as $value){ ?>
-	<option value="<?php echo $value->cid; ?>"><?php echo $value->category_name; ?></option>
-	<?php } ?></select></div> </td>
-<td valign="top">Select Difficult Level</td><td valign="top">
-<div class="styled-select black semi-square"  style="width:120px;"><select name="did" id='did'>
-<option value="0">Select</option>
-	<?php foreach($difficult_level as $value){ ?>
-<option value="<?php echo $value->did; ?>"><?php echo $value->level_name; ?></option>
-<?php } ?></select> </div> </td>
-	<td>No. of Ques to add in test</td>
-	<td id="no_of_question">
-		
-	</td>
-</tr>
 
-</table>
-</div>
-<div id="qman" style="display:none;visibility:hidden;">
+<div id="qman" style="">
 <h1> Click on 'Submit Quiz' button and you will go to question selection module.</h1>
 </div>
 <br>
@@ -148,7 +124,7 @@ Add questions
 <tr>
 <td valign="top"></td>
 <td valign="top">
-<input type="hidden" value="1" name="qselect" id="qselect">
+<input type="hidden" value="0" name="qselect" id="qselect">
 <input type="submit" value="Submit Quiz" name="submit_quiz"   class="button-warning pure-button"> </td></tr>
 </form>
 </table>
