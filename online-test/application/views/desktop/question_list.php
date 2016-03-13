@@ -75,7 +75,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                         <div class="panel-body">
                             <div class="table-responsive">
                             <form method="post" action="<?php echo site_url('qbank/remove_qids/'.$limit);?>" id="removeqids">
-                                <table class="table table-hover">
+                                <table class="table table-condensed table-hover table-striped">
                                     <thead>
                                         <tr>
                                             <th><input type="checkbox" name=""  onClick="selectall('<?php echo count($result);?>');"></th>
@@ -169,14 +169,16 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 &nbsp;&nbsp;
 <?php
 if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-
+<?php if(!(($limit-($this->config->item('number_of_rows'))) < 0)) { ?>
 <a href="<?php echo site_url('qbank/index/'.$back.'/'.$fcid);?>"  class="btn btn-primary">Back</a>
 &nbsp;&nbsp;
+<?php } ?>
 <?php
  $next=$limit+($this->config->item('number_of_rows'));  ?>
-
+<?php if($result==true){ ?>
 <a href="<?php echo site_url('qbank/index/'.$next.'/'.$fcid);?>"  class="btn btn-primary">Next</a>
 &nbsp;&nbsp;
+<?php } ?>
 <a href="javascript:showhiddendiv('importbox');"  class="btn btn-warning">Import</a>
 
 

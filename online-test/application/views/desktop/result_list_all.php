@@ -57,7 +57,7 @@ if($logged_in['su']=="1"){
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-condensed table-hover table-striped">
                                     <thead>
 									<tr><th >Id</th>
 									<?php
@@ -144,40 +144,14 @@ if($logged_in['su']=="1" && $logged_in['id']=="1"){
 
 <?php
 if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-
-<?php
-if($logged_in['su']=="1") {
-?>
-
-<a href="<?php echo site_url('result/index/'.$back);?>"   class="btn btn-primary">Back</a>
-&nbsp;&nbsp;
-<?php $next=$limit+($this->config->item('number_of_rows'));  ?>
-
-<!-- <?php echo $next .'-'. $this->config->item('number_of_rows') .'-'. $limit .'-'. count($result);?> -->
-<!-- if(count($result) > $next) -->
-
-<?php if(true) { ?>
-	<a href="<?php echo site_url('result/index/'.$next);?>"   class="btn btn-primary">Next</a>
-<?php } ?>
-
-
-<?php
-} else {
-?>
-
+<?php if(!(($limit-($this->config->item('number_of_rows'))) < 0)) { ?>
 <a href="<?php echo site_url('result/user/'.$back);?>"   class="btn btn-primary">Back</a>
 &nbsp;&nbsp;
+<?php } ?>
 <?php $next=$limit+($this->config->item('number_of_rows'));  ?>
-
-<!-- <?php echo $next .'-'. $this->config->item('number_of_rows') .'-'. $limit .'-'. count($result);?> -->
-
-<?php if(true) { ?>
+<?php if($result==true){ ?>
 	<a href="<?php echo site_url('result/user/'.$next);?>"  class="btn btn-primary">Next</a>
 <?php } ?>
-
-<?php
-}
-?> 
 									
 									
 									

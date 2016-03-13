@@ -35,6 +35,17 @@ $(document).ready(function() {
             }
         });
     });
+
+    for (var i = 1; i < 7; i++) {
+        var reviewId = '#toggle-review-' + i;
+        $(reviewId).bootstrapToggle({
+            on: 'Marked for Review',
+            off: 'Review Later',
+            onstyle: 'warning',
+            width: 175,
+            height: 45
+        });
+    }
 });
 
 
@@ -639,10 +650,6 @@ function showquestion(id, q_type) {
 
     });
     qtime = 0;
-
-
-
-
 }
 
 //update answer

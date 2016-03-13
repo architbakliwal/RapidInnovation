@@ -220,7 +220,8 @@ $category_number+=1;
 }
 ?>
 &nbsp; 
-<a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a>
+<!-- <a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a> -->
+<input id="toggle-review-1" type="checkbox" onChange="reviewlater('<?php echo $question['q_type'];?>');">
 &nbsp; 
 <a href="#"   class="btn btn-info"  onClick="clearresponse('<?php echo $key;?>');" > Clear-Response </a>
 &nbsp; <?php if ($result->pract_test=="0"){ ?><a href="javascript:pre_sbtform();"   class="btn btn-danger">Submit Test</a><?php }else{ ?> <a href="javascript:close_practice();"   class="button-error pure-button" style="cursor:pointer;">Close</a> <?php } ?>
@@ -296,7 +297,8 @@ $category_number+=1;
 }
 ?>
 &nbsp; 
-<a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a>
+<!-- <a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a> -->
+<input id="toggle-review-2" type="checkbox" onChange="reviewlater('<?php echo $question['q_type'];?>');">
 &nbsp; <?php if ($result->pract_test=="0"){ ?><a href="javascript:pre_sbtform();"   class="btn btn-danger">Submit Test</a><?php }else{ ?> <a href="javascript:close_practice();"   class="button-error pure-button" style="cursor:pointer;">Close</a> <?php } ?>
 </td></tr>
 
@@ -369,7 +371,8 @@ $category_number+=1;
 }
 ?>
 &nbsp; 
-<a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a>
+<!-- <a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a> -->
+<input id="toggle-review-3" type="checkbox" onChange="reviewlater('<?php echo $question['q_type'];?>');">
 &nbsp; <?php if ($result->pract_test=="0"){ ?><a href="javascript:pre_sbtform();"   class="btn btn-danger">Submit Test</a><?php }else{ ?> <a href="javascript:close_practice();"   class="button-error pure-button" style="cursor:pointer;">Close</a> <?php } ?>
 
 </td></tr>
@@ -441,7 +444,8 @@ $category_number+=1;
 }
 ?>
 &nbsp; 
-<a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a>
+<!-- <a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a> -->
+<input id="toggle-review-4" type="checkbox" onChange="reviewlater('<?php echo $question['q_type'];?>');">
 &nbsp; <?php if ($result->pract_test=="0"){ ?><a href="javascript:pre_sbtform();"   class="btn btn-danger">Submit Test</a><?php }else{ ?> <a href="javascript:close_practice();"   class="button-error pure-button" style="cursor:pointer;">Close</a> <?php } ?>
 </td></tr>
 
@@ -495,7 +499,8 @@ $category_number+=1;
 }
 ?>
 &nbsp; 
-<a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a>
+<!-- <a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a> -->
+<input id="toggle-review-5" type="checkbox" onChange="reviewlater('<?php echo $question['q_type'];?>');">
 &nbsp; <?php if ($result->pract_test=="0"){ ?><a href="javascript:pre_sbtform();"   class="btn btn-danger">Submit Test</a><?php }else{ ?> <a href="javascript:close_practice();"   class="button-error pure-button" style="cursor:pointer;">Close</a> <?php } ?>
 </td></tr>
 
@@ -630,7 +635,8 @@ $category_number+=1;
 }
 ?>
 &nbsp;
-<a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a>
+<!-- <a href="#"   class="btn btn-warning"  onClick="reviewlater('<?php echo $question['q_type'];?>');"> Review later </a> -->
+<input id="toggle-review-6" type="checkbox" onChange="reviewlater('<?php echo $question['q_type'];?>');">
 &nbsp; <?php if ($result->pract_test=="0"){ ?><a href="javascript:pre_sbtform();"   class="btn btn-danger">Submit Test</a><?php }else{ ?> <a href="javascript:close_practice();"   class="button-error pure-button" style="cursor:pointer;">Close</a> <?php } ?>
 </td></tr>
 

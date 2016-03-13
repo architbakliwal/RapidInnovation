@@ -69,7 +69,26 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
                                     </tbody>
 </table>
 
+<?php 
 
+$qtime_array = array();
+$qtime_array = json_decode($qtime, true);
+for($i=0; $i<count($qtime_array); $i++) {
+  if($qtime_array[$i][1] != 0) {
+    $qtime_chart = true;
+  }
+  // print_r($qtime_array[$i][1]);
+}
+
+$ctime_array = array();
+$ctime_array = json_decode($ctime, true);
+for($i=0; $i<count($ctime_array); $i++) {
+  if($ctime_array[$i][1] != 0) {
+    $ctime_chart = true;
+  }
+  // print_r($ctime_array[$i][1]);
+}
+?>
 
 <?php if($result->view_answer =="1"){
 ?><div class="hide_btn_while_print">
@@ -117,6 +136,7 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
 
 <!-- google chart starts -->
 
+<?php if($qtime_chart) { ?>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
@@ -133,11 +153,12 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
       }
     </script>
 		 <div id="chart_div2" style="width:100%; height: 100%;"></div>
+<?php } ?>
 <!-- google chart ends -->
 
 
 <!-- google chart starts -->
-
+<?php if($ctime_chart) { ?>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
@@ -155,6 +176,8 @@ if($result2==true){ echo "<span style='color:red'> <a href='".site_url('result/v
     </script>
 		 <div id="chart_div3" style="width: 100%; height: 100%"></div>
 <!-- google chart ends -->
+
+<?php } ?>
 
 
 

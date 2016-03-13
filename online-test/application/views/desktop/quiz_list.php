@@ -45,7 +45,7 @@ if($logged_in['su']=="1"){
                         <div class="panel-body">
                             <div class="table-responsive">
                             <form method="post" action="<?php echo site_url('qbank/remove_qids/'.$limit);?>" id="removeqids">
-                                <table class="table table-hover">
+                                <table class="table table-condensed table-hover table-striped">
                                     <thead>
                                         <tr><th>Id</th><th>Quiz name</th><th>Available from</th><th>Available till</th><th>Duration</th><th>Action</th></tr>
 
@@ -113,14 +113,15 @@ if($logged_in['su']=="1"){
 
 <?php
 if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-
+<?php if(!(($limit-($this->config->item('number_of_rows'))) < 0)) { ?>
 <a href="<?php echo site_url('quiz/index/'.$back);?>" class="btn btn-primary">Back</a>
 &nbsp;&nbsp;
+<?php } ?>
 <?php
  $next=$limit+($this->config->item('number_of_rows'));  ?>
-
+<?php if($result==true){ ?>
 <a href="<?php echo site_url('quiz/index/'.$next);?>" class="btn btn-primary">Next</a>
-
+<?php } ?>
 
 
 

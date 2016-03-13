@@ -30,7 +30,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-condensed table-hover table-striped">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -90,13 +90,14 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 
 <?php
 if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-
+<?php if(!(($limit-($this->config->item('number_of_rows'))) < 0)) { ?>
 <a href="<?php echo site_url('user_data/index/'.$back);?>"  class="btn btn-primary">Back</a>
 &nbsp;&nbsp;
-<?php
- $next=$limit+($this->config->item('number_of_rows'));  ?>
-
+<?php } ?>
+<?php $next=$limit+($this->config->item('number_of_rows'));  ?>
+<?php if($result==true){ ?>
 <a href="<?php echo site_url('user_data/index/'.$next);?>"  class="btn btn-primary">Next</a>
+<?php } ?>
 
 
 
