@@ -25,6 +25,8 @@ return;
     $this->load->helper('form');
 	$this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
+  	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
 	$data['result'] = $this->qbank_model->question_list($limit,$cid);
@@ -50,6 +52,8 @@ return;
 	$this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
+	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
 	$data['result'] = $this->qbank_model->question_list($limit,$cid);
 	$data['title']="Question Bank";
@@ -171,6 +175,8 @@ return;
 
   $this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
+  	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
 
@@ -198,6 +204,8 @@ return;
 $data['q_t']=$q_t; 
   $this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
+  	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
 	if($this->input->post('cid')){
@@ -236,6 +244,8 @@ return;
 }		
    $this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
+  	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
 	if($this->input->post('cid')){

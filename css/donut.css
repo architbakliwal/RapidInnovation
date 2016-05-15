@@ -471,10 +471,10 @@ table .table {
 }
 
 .navbar-toggle {
-    margin-left: 8px;
+    /*margin-left: 8px;
     margin-right: 0px;
     float: left !important;
-    float: left;
+    float: left;*/
 }
 
 .navbar-login-button {
@@ -612,16 +612,18 @@ header .search-bar {
     /*border-bottom: 1px solid #eee !important;*/
 }
 
-.dropdown-menu a {
-    padding: 7px 10px !important;
-}
 
-.dropdown-menu li {
-    border-bottom: 1px solid #eee;
-}
 
-.dropdown-menu li:last-child {
-    border-bottom: 0px;
+@media only screen and (min-width: 767px) {
+    .dropdown-menu a {
+        padding: 7px 10px !important;
+    }
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+    .dropdown-menu li:last-child {
+        border-bottom: 0px;
+    }
 }
 
 .qa-search-button {
@@ -646,7 +648,7 @@ header .search-bar {
         padding-right: 0;
     }
     .navbar-header {
-        float: left;
+        /*float: left;*/
     }
     .main-nav {
         clear: both;
@@ -666,7 +668,7 @@ header .search-bar {
         float: none !important;
     }
     .navbar-right {
-        float: right !important;
+        /*float: right !important;*/
     }
     .nav.navbar-nav.navbar-right.user-nav {
         clear: none;
@@ -905,27 +907,29 @@ div .header-banner {
     margin-top: 7px;
 }
 
-.navbar-nav:not(.navbar-right) li .dropdown-menu:before {
-    position: absolute;
-    top: -7px;
-    left: 9px;
-    display: inline-block;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #ccc;
-    border-left: 7px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    content: '';
-}
+@media only screen and (min-width: 767px) {
+    .navbar-nav:not(.navbar-right) li .dropdown-menu:before {
+        position: absolute;
+        top: -7px;
+        left: 9px;
+        display: inline-block;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #ccc;
+        border-left: 7px solid transparent;
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        content: '';
+    }
 
-.navbar-nav:not(.navbar-right) li .dropdown-menu::after {
-    position: absolute;
-    top: -6px;
-    left: 10px;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #ffffff;
-    border-left: 6px solid transparent;
-    content: '';
+    .navbar-nav:not(.navbar-right) li .dropdown-menu::after {
+        position: absolute;
+        top: -6px;
+        left: 10px;
+        display: inline-block;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #ffffff;
+        border-left: 6px solid transparent;
+        content: '';
+    }
 }
 
 

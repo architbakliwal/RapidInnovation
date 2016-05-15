@@ -80,6 +80,7 @@ Class quiz_model extends CI_Model
 			$insert_data = array(
 			'quid'	=>	$quid,
 			'cid'	=>	$this->input->post('cid'),
+			'scid'	=>	$this->input->post('scid'),
 			'did'	=>	$this->input->post('did'),
 			'no_of_questions'	=>	$noq['0'],
 			'institute_id' => $institute_id
@@ -216,6 +217,7 @@ $this->db->insert('essay_qsn', $insert_data);
 			$insert_data = array(
 			'quid'	=>	$quid,
 			'cid'	=>	$_POST['cid'][$qkey],
+			'scid'	=>	$_POST['cid'][$qkey],
 			'did'	=>	$_POST['did'][$qkey],
 			'no_of_questions'	=>	$_POST['no_of_questions'][$qkey],
 			'institute_id' => $institute_id

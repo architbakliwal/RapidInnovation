@@ -55,7 +55,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -64,13 +64,11 @@
                 <a class="navbar-brand page-scroll" href="#page-top">Rapidovations</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li><a class="page-scroll" href="#idea">Our Idea</a></li>
                             <li><a class="page-scroll" href="#services">Services</a></li>
                             <li><a class="page-scroll" href="#team">Founding Members</a></li>
@@ -90,7 +88,10 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown login-dropdown login active">
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <a class="page-scroll" href="forum/index.php?qa=login&to=index.php">Login <span class="fa fa-key"></span></a>
+                    </li>
+                    <li class="dropdown login-dropdown login active hidden-xs">
                         <a href="#" title="" data-toggle="dropdown" class="navbar-login-button" style="background-color: transparent;">Login <span class="fa fa-key"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" id="login-dropdown-menu">
@@ -168,7 +169,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="glyphicon glyphicon-bookmark fa-stack-1x fa-inverse"></i>
@@ -176,7 +177,7 @@
                     <h4 class="service-heading">Classroom Training</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="glyphicon glyphicon-bullhorn fa-stack-1x fa-inverse"></i>
@@ -184,7 +185,7 @@
                     <h4 class="service-heading">Online Tests</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="glyphicon glyphicon-star fa-stack-1x fa-inverse"></i>
@@ -192,7 +193,7 @@
                     <h4 class="service-heading">Q&A Platform</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="glyphicon glyphicon-bookmark fa-stack-1x fa-inverse"></i>
@@ -200,7 +201,7 @@
                     <h4 class="service-heading">Extended Curriculum</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="glyphicon glyphicon-bullhorn fa-stack-1x fa-inverse"></i>
@@ -208,7 +209,7 @@
                     <h4 class="service-heading">Expert Talks</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="glyphicon glyphicon-star fa-stack-1x fa-inverse"></i>
@@ -229,25 +230,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="team-member">
                         <img src="img/team/team.png" class="img-responsive img-circle" alt="">
                         <h4>Name 1</h4>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="team-member">
                         <img src="img/team/team.png" class="img-responsive img-circle" alt="">
                         <h4>Name 2</h4>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="team-member">
                         <img src="img/team/team.png" class="img-responsive img-circle" alt="">
                         <h4>Name 3</h4>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="team-member">
                         <img src="img/team/team.png" class="img-responsive img-circle" alt="">
                         <h4>Name 4</h4>

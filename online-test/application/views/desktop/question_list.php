@@ -49,6 +49,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 <option value="qbank.qid">ID</option>
 <option value="qbank.question">Question</option>
 <option value="question_category.category_name">Category</option>
+<option value="question_sub_category.category_name">Sub Category</option>
 <option value="difficult_level.level_name">Level</option>
 </select> 
 <input type="text" name="search" class="form-control" style="width:150px;float:left;margin-left:10px;" value=""> 
@@ -82,6 +83,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                                              <th>ID</th>
                                              <th>Question</th>
                                             <th>Category</th>
+                                            <th>Sub Category</th>
                                             <th>Level</th>
                                             <th>Type</th>
                                              <th>Action</th>
@@ -130,6 +132,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 								<td data-th="ID"><?php echo $row->qid;?></td>
 								<td data-th="Question"><?php echo substr(strip_tags($row->question),"0","20");?></td>
 								<td data-th="Category"><?php echo $row->category_name;?></td>
+								<td data-th="Sub Category"><?php echo $row->sub_category_name;?></td>
 								<td data-th="Level"><?php echo $row->level_name;?></td>
 								<td data-th="Type"><?php echo $type;?></td>
 								<td data-th="Action">

@@ -56,6 +56,8 @@ return;
 
  	$this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
+  	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
 	$data['groups'] = $this->group_model->get_allgroups();
 	
@@ -83,6 +85,8 @@ return;
 
  	$this->load->model('category','',TRUE);
   	$data['category'] = $this->category->category_dropdown();
+  	$this->load->model('sub_category','',TRUE);
+  	$data['sub_category'] = $this->sub_category->category_dropdown();
 	$this->load->model('difficult_level','',TRUE);
 	$data['groups'] = $this->group_model->get_allgroups();
 	

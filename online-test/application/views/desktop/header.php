@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap-toggle.min.css" type="text/css" media="screen"/>
 
-<script type="text/javascript" src="<?php echo base_url();?>editor/tiny_mce.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>editor/tinymce.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-toggle.min.js"></script>

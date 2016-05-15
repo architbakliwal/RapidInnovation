@@ -15,10 +15,10 @@ Class qbank_model extends CI_Model
    $search_type=$this->input->post('search_type');
    $search=$this->input->post('search');
   
-  $query = $this -> db -> query("select qbank.*, question_category.category_name, difficult_level.level_name from qbank, question_category, difficult_level where qbank.cid=question_category.cid and qbank.did=difficult_level.did and $search_type like '%$search%' and qbank.institute_id = '$institute_id' $extrap order by qid desc limit $limit, $nor");
+  $query = $this -> db -> query("select qbank.*, question_category.category_name, question_sub_category.category_name AS sub_category_name, difficult_level.level_name from qbank, question_category, question_sub_category, difficult_level where qbank.cid=question_category.cid and qbank.scid=question_sub_category.scid and qbank.did=difficult_level.did and $search_type like '%$search%' and qbank.institute_id = '$institute_id' $extrap order by qid desc limit $limit, $nor");
   
   }else{
-  $query = $this -> db -> query("select qbank.*, question_category.category_name, difficult_level.level_name from qbank, question_category, difficult_level where qbank.cid=question_category.cid and qbank.did=difficult_level.did and qbank.institute_id = '$institute_id' $extrap order by qid desc limit $limit, $nor");
+  $query = $this -> db -> query("select qbank.*, question_category.category_name, question_sub_category.category_name AS sub_category_name, difficult_level.level_name from qbank, question_category, question_sub_category, difficult_level where qbank.cid=question_category.cid and qbank.scid=question_sub_category.scid and qbank.did=difficult_level.did and qbank.institute_id = '$institute_id' $extrap order by qid desc limit $limit, $nor");
 	}
    if($query -> num_rows() >= 1)
    {
@@ -82,6 +82,7 @@ function add_question(){
 			
 			$insert_data = array(
 			'cid' => $this->input->post('cid'),
+			'scid' => $this->input->post('scid'),
 			'q_type' => $this->input->post('qus_type'),
 			'did' => $this->input->post('did'),
 			'question' => $this->input->post('question'),
@@ -342,6 +343,7 @@ if($question['question'] != ""){
 function update_question($id,$q_type){
 			$insert_data = array(
 			'cid' => $this->input->post('cid'),
+			'scid' => $this->input->post('scid'),
 			'did' => $this->input->post('did'),
 			'question' => $this->input->post('question'),
 			'description' => $this->input->post('description')

@@ -206,6 +206,13 @@ fieldset[disabled] .btn-xl.active {
     /*color: #fff;*/
 }
 
+@media only screen and (max-width: 768px) {
+    .navbar-default .nav li a {
+        padding: 5px 10px;
+        font-size: small;
+    }
+}
+
 .navbar-default .nav li a:focus {
     outline: 0;
     color: #ffffff;
@@ -279,7 +286,7 @@ header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 22px;
     font-style: italic;
-    line-height: 22px;
+    /*line-height: 22px;*/
 }
 
 header .intro-text .intro-heading {
