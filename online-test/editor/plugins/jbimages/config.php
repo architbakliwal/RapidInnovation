@@ -38,8 +38,13 @@
 | -------------------------------------------------------------------*/
 
 	
-	$config['img_path'] = '/online-test/images/uploads'; // Relative to domain name
-	$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this]
+	if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
+		$config['upload_path'] = "C:/Users/Archit/Documents/GitHub/RapidInnovation/online-test/images/uploads";
+		$config['img_path'] = "http://127.0.0.1/rapid/online-test/images/uploads";
+	} else {
+		$config['upload_path'] = "/home/rapidovations/public_html/online-test/images/uploads";
+		$config['img_path'] = "http://rapidovations.com/online-test/images/uploads";
+	}
 
 
 /*-------------------------------------------------------------------

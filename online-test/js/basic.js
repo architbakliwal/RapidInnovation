@@ -7,6 +7,7 @@ if (window.location.href.indexOf("127.0.0.1") > -1) {
 }
 
 var comnt_id = "0";
+var no_of_questions = 0;
 $(document).ready(function() {
     $('#did').click(function() {
         var did = $('#did').val();
@@ -36,7 +37,7 @@ $(document).ready(function() {
         });
     });
 
-    for (var i = 1; i < 7; i++) {
+    for (var i = 0; i < 200; i++) {
         var reviewId = '#toggle-review-' + i;
         $(reviewId).bootstrapToggle({
             on: 'Marked for Review',

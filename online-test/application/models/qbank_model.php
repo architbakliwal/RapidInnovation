@@ -34,44 +34,45 @@ Class qbank_model extends CI_Model
  
  $institute_id = $this->session->userdata('institute_id');
 			 	
-			$insert_data = array(
-			'cid' => $this->input->post('cid'),
-			'q_type' => $this->input->post('qus_type'),
-			'did' => $this->input->post('did'),
-			'question' => $this->input->post('question'),
-			'description' => $this->input->post('description'),
-			'institute_id' => $institute_id
-			);
-			
- 			
-			if($this->db->insert('qbank',$insert_data)){
-			$qid=$this->db->insert_id();
-			foreach($_POST['option'] as $key => $value){
-			foreach($_POST['CheckBox'] as $key2 => $value1){
-			if($value1==$key){
-			$score=1/count($_POST['CheckBox']);
-			break;
-			}else{
-			$score="0";
-			}
-			
-			
-			
-			}
-			$insert_data = array(
-			'qid' => $qid,
-			'option_value' => $value,
-			'score'=> $score,
-			'institute_id' => $institute_id
-			);
-			
-			$this->db->insert('q_options',$insert_data);
-			}
+	$insert_data = array(
+	'cid' => $this->input->post('cid'),
+	'scid' => $this->input->post('scid'),
+	'q_type' => $this->input->post('qus_type'),
+	'did' => $this->input->post('did'),
+	'question' => $this->input->post('question'),
+	'description' => $this->input->post('description'),
+	'institute_id' => $institute_id
+	);
 	
-			return "Question added successfully";
-			}else{
-			return "Unable to add question";
-			}
+		
+	if($this->db->insert('qbank',$insert_data)){
+	$qid=$this->db->insert_id();
+	foreach($_POST['option'] as $key => $value){
+	foreach($_POST['CheckBox'] as $key2 => $value1){
+	if($value1==$key){
+	$score=1/count($_POST['CheckBox']);
+	break;
+	}else{
+	$score="0";
+	}
+	
+	
+	
+	}
+	$insert_data = array(
+	'qid' => $qid,
+	'option_value' => $value,
+	'score'=> $score,
+	'institute_id' => $institute_id
+	);
+	
+	$this->db->insert('q_options',$insert_data);
+	}
+
+	return "Question added successfully";
+	}else{
+	return "Unable to add question";
+	}
  
  
  }
@@ -124,7 +125,8 @@ function add_question(){
 }
 
 function import_question($question){
-//echo "<pre>"; print_r($question);exit;
+// echo "<pre>"; print_r($question);
+// exit;
 $institute_id = $this->session->userdata('institute_id');
 $questioncid=$this->input->post('cid');
 $questiondid=$this->input->post('did');
@@ -134,27 +136,31 @@ foreach($question as $key => $singlequestion){
 //echo $ques_type; 
 
 if($key != 0){
-echo "<pre>";print_r($singlequestion);
-$question= str_replace('"','&#34;',$singlequestion['1']);
-$question= str_replace("`",'&#39;',$question);
+// echo "<pre>";print_r($singlequestion);
+// $question= str_replace('"','&#34;',$singlequestion['1']);
+$question= str_replace("`",'&#39;',$singlequestion['1']);
 $question= str_replace("‘",'&#39;',$question);
 $question= str_replace("’",'&#39;',$question);
 $question= str_replace("â€œ",'&#34;',$question);
 $question= str_replace("â€˜",'&#39;',$question);
-
-
-
 $question= str_replace("â€™",'&#39;',$question);
 $question= str_replace("â€",'&#34;',$question);
 $question= str_replace("'","&#39;",$question);
 $question= str_replace("\n","<br>",$question);
-$description= str_replace('"','&#34;',$singlequestion['2']);
-$description= str_replace("'","&#39;",$description);
+
+// $subcategory= str_replace('"','&#34;',$singlequestion['2']);
+$subcategory= str_replace("'","&#39;",$singlequestion['2']);
+$subcategory= str_replace("\n","<br>",$subcategory);
+
+// $description= str_replace('"','&#34;',$singlequestion['3']);
+$description= str_replace("'","&#39;",$singlequestion['3']);
 $description= str_replace("\n","<br>",$description);
+
 $ques_type= $singlequestion['0'];
 
 	$insert_data = array(
 	'cid' => $questioncid,
+	'scid' => $subcategory,
 	'did' => $questiondid,
 	'question' =>$question,
 	'description' => $description,
@@ -164,12 +170,16 @@ $ques_type= $singlequestion['0'];
 	
 	if($this->db->insert('qbank',$insert_data)){
 		$qid=$this->db->insert_id();
-		$optionkeycounter = 4;
+		$optionkeycounter = 5;
 		if($ques_type=="0" || $ques_type==""){
 		for($i=1;$i<=10;$i++){
 			if($singlequestion[$optionkeycounter] != ""){
-				if($singlequestion['3'] == $i){ $correctoption ='1'; }
-				else{ $correctoption = 0; }
+				if($singlequestion['4'] == $i) {
+					$correctoption ='1';
+				}
+				else {
+					$correctoption = 0;
+				}
 				$insert_options = array(
 				"qid" =>$qid,
 				"option_value" => $singlequestion[$optionkeycounter],
@@ -184,7 +194,7 @@ $ques_type= $singlequestion['0'];
 	}
 	//multiple type
 	if($ques_type=="1"){
-			$correct_options=explode(",",$singlequestion['3']);
+			$correct_options=explode(",",$singlequestion['4']);
 			$no_correct=count($correct_options);
 			$correctoptionm=array();
 			for($i=1;$i<=10;$i++){
@@ -226,7 +236,7 @@ $ques_type= $singlequestion['0'];
 		for($i=1;$i<=1;$i++){
 			
 			if($singlequestion[$optionkeycounter] != ""){
-				if($singlequestion['3'] == $i){ $correctoption ='1'; }
+				if($singlequestion['4'] == $i){ $correctoption ='1'; }
 				$insert_options = array(
 				"qid" =>$qid,
 				"option_value" => $singlequestion[$optionkeycounter],
@@ -249,7 +259,7 @@ $ques_type= $singlequestion['0'];
 		for($i=1;$i<=1;$i++){
 			
 			if($singlequestion[$optionkeycounter] != ""){
-				if($singlequestion['3'] == $i){ $correctoption ='1'; }
+				if($singlequestion['4'] == $i){ $correctoption ='1'; }
 				$insert_options = array(
 				"qid" =>$qid,
 				"option_value" => $singlequestion[$optionkeycounter],
