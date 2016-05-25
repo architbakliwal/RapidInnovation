@@ -128,8 +128,8 @@ function import_question($question){
 // echo "<pre>"; print_r($question);
 // exit;
 $institute_id = $this->session->userdata('institute_id');
-$questioncid=$this->input->post('cid');
-$questiondid=$this->input->post('did');
+// $questioncid=$this->input->post('cid');
+// $questiondid=$this->input->post('did');
 foreach($question as $key => $singlequestion){
 	//$ques_type= 
 	
@@ -148,12 +148,18 @@ $question= str_replace("â€",'&#34;',$question);
 $question= str_replace("'","&#39;",$question);
 $question= str_replace("\n","<br>",$question);
 
+$questioncid= str_replace("'","&#39;",$singlequestion['2']);
+$questioncid= str_replace("\n","<br>",$questioncid);
+
 // $subcategory= str_replace('"','&#34;',$singlequestion['2']);
-$subcategory= str_replace("'","&#39;",$singlequestion['2']);
+$subcategory= str_replace("'","&#39;",$singlequestion['3']);
 $subcategory= str_replace("\n","<br>",$subcategory);
 
+$questiondid= str_replace("'","&#39;",$singlequestion['4']);
+$questiondid= str_replace("\n","<br>",$questiondid);
+
 // $description= str_replace('"','&#34;',$singlequestion['3']);
-$description= str_replace("'","&#39;",$singlequestion['3']);
+$description= str_replace("'","&#39;",$singlequestion['5']);
 $description= str_replace("\n","<br>",$description);
 
 $ques_type= $singlequestion['0'];
@@ -170,11 +176,12 @@ $ques_type= $singlequestion['0'];
 	
 	if($this->db->insert('qbank',$insert_data)){
 		$qid=$this->db->insert_id();
-		$optionkeycounter = 5;
+		$optionkeycounter = 7;
+
 		if($ques_type=="0" || $ques_type==""){
 		for($i=1;$i<=10;$i++){
 			if($singlequestion[$optionkeycounter] != ""){
-				if($singlequestion['4'] == $i) {
+				if($singlequestion['6'] == $i) {
 					$correctoption ='1';
 				}
 				else {
@@ -194,7 +201,7 @@ $ques_type= $singlequestion['0'];
 	}
 	//multiple type
 	if($ques_type=="1"){
-			$correct_options=explode(",",$singlequestion['4']);
+			$correct_options=explode(",",$singlequestion['6']);
 			$no_correct=count($correct_options);
 			$correctoptionm=array();
 			for($i=1;$i<=10;$i++){
@@ -236,7 +243,7 @@ $ques_type= $singlequestion['0'];
 		for($i=1;$i<=1;$i++){
 			
 			if($singlequestion[$optionkeycounter] != ""){
-				if($singlequestion['4'] == $i){ $correctoption ='1'; }
+				if($singlequestion['6'] == $i){ $correctoption ='1'; }
 				$insert_options = array(
 				"qid" =>$qid,
 				"option_value" => $singlequestion[$optionkeycounter],
@@ -259,7 +266,7 @@ $ques_type= $singlequestion['0'];
 		for($i=1;$i<=1;$i++){
 			
 			if($singlequestion[$optionkeycounter] != ""){
-				if($singlequestion['4'] == $i){ $correctoption ='1'; }
+				if($singlequestion['6'] == $i){ $correctoption ='1'; }
 				$insert_options = array(
 				"qid" =>$qid,
 				"option_value" => $singlequestion[$optionkeycounter],
@@ -289,7 +296,7 @@ $ques_type= $singlequestion['0'];
 				
 				}
 			///h
-			$optionkeycounter=4;
+			$optionkeycounter=7;
 		for($i=1;$i<=10;$i++){
 			
 			if($singlequestion[$optionkeycounter] != ""){

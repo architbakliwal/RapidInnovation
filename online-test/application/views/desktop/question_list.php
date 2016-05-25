@@ -195,17 +195,7 @@ $next=$limit+( $this->config->item( 'number_of_rows' ) );  ?>
 
 <br><br><div class="searchbox form-group" id="importbox">
 <?php echo form_open( 'qbank/import', array( 'enctype'=>'multipart/form-data' ) ); ?>
- <h3>Import Question</h3> 
- <select name="cid" class="form-control" style="width:150px;float:left;margin-left:0px;" >
- <option value="0">Select Category</option>
-<?php foreach ( $category as $value ) { ?>
-<option value="<?php echo $value->cid; ?>"><?php echo $value->category_name; ?></option>
-<?php } ?></select>
- <select name="did" class="form-control" style="width:150px;float:left;margin-left:10px;">
- <option value="0">Select level</option>
-<?php foreach ( $difficult_level as $value ) { ?>
-<option value="<?php echo $value->did; ?>"><?php echo $value->level_name; ?></option>
-<?php } ?></select>
+ <h3>Import Question</h3>
 
 Upload Excel file ( .xls only )
 	<input type="hidden" name="size" value="3500000">

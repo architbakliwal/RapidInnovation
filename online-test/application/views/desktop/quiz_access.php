@@ -287,7 +287,7 @@ if($key!=(count($assigned_question['0'])-1)){
 if(in_array($key,$startnextcate)){
 $category_number+=1;
 ?>
-<a href="#"   class="btn btn-success" style="cursor:pointer;"  onClick="showquestion('<?php echo $key+1;?>','<?php echo $question['q_type'];?>');changecategory('<?php echo $category_number;?>')update_curr_ans('<?php echo $key;?>','<?php echo $question['q_type'];?>');" >Save & Next</a>
+<a href="#"   class="btn btn-success" style="cursor:pointer;"  onClick="showquestion('<?php echo $key+1;?>','<?php echo $question['q_type'];?>');changecategory('<?php echo $category_number;?>');update_curr_ans('<?php echo $key;?>','<?php echo $question['q_type'];?>');" >Save & Next</a>
 <?php
 }else{
 ?>

@@ -90,105 +90,8 @@ CREATE TABLE IF NOT EXISTS `essay_qsn` (
   `essay_status` int(11) NOT NULL DEFAULT '0',
   `q_type` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`essay_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=93 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `essay_qsn`
---
-
-INSERT INTO `essay_qsn` (`essay_id`, `q_id`, `r_id`, `essay_cont`, `essay_score`, `essay_status`, `q_type`) VALUES
-(1, 6, 1, 'Red=Green,BMW=Honda,Keyboard=Mouse,Eye=Nose', 0, 0, 5),
-(2, 4, 1, 'Red', 0, 0, 3),
-(3, 6, 1, 'Red=Green,BMW=Honda,Keyboard=Mouse,Eye=Nose', 0, 0, 5),
-(4, 3, 1, 'Transparent', 0, 0, 2),
-(5, 6, 2, 'Red=Mouse,BMW=Nose,Keyboard=Green,Eye=Honda', 0, 0, 5),
-(6, 4, 2, 'red', 0, 0, 3),
-(7, 3, 2, 'yellow', 0, 0, 2),
-(8, 6, 2, 'Red=Mouse,BMW=Nose,Keyboard=Green,Eye=Honda', 0, 0, 5),
-(9, 5, 2, 'India is a country in Asia', 1, 1, 0),
-(10, 6, 3, 'Red=Nose,BMW=Green,Keyboard=Green,Eye=Mouse', 0, 0, 5),
-(11, 4, 3, 'blue', 0, 0, 3),
-(12, 3, 3, 'transparent', 0, 0, 2),
-(13, 6, 3, 'Red=Nose,BMW=Green,Keyboard=Green,Eye=Mouse', 0, 0, 5),
-(14, 5, 3, 'india india', 1, 1, 0),
-(15, 6, 4, 'Red=Mouse,BMW=Nose,Keyboard=Honda,Eye=Mouse', 0, 0, 5),
-(16, 4, 4, 'blue', 0, 0, 3),
-(17, 3, 4, 'transparent', 0, 0, 2),
-(18, 6, 4, 'Red=Mouse,BMW=Nose,Keyboard=Honda,Eye=Mouse', 0, 0, 5),
-(19, 5, 4, 'india', 1, 1, 0),
-(20, 6, 5, 'Red=Nose,BMW=Green,Keyboard=Honda,Eye=Mouse', 0, 0, 5),
-(21, 4, 5, 'blue', 0, 0, 3),
-(22, 3, 5, 'transparent', 0, 0, 2),
-(23, 6, 5, 'Red=Nose,BMW=Green,Keyboard=Honda,Eye=Mouse', 0, 0, 5),
-(24, 5, 5, 'india', 1, 1, 0),
-(25, 6, 6, 'Red=,BMW=,Keyboard=,Eye=', 0, 0, 5),
-(26, 4, 6, 'blue', 0, 0, 3),
-(27, 3, 6, 'transparent', 0, 0, 2),
-(28, 5, 6, 'india', 1, 1, 0),
-(29, 6, 7, 'Red=Nose,BMW=Green,Keyboard=Nose,Eye=Green', 0, 0, 5),
-(30, 4, 7, 'blue', 0, 0, 3),
-(31, 3, 7, 'transparent', 0, 0, 2),
-(32, 6, 7, 'Red=Nose,BMW=Green,Keyboard=Nose,Eye=Green', 0, 0, 5),
-(33, 5, 7, 'india is a country', 1, 1, 0),
-(34, 6, 8, 'Red=Honda,BMW=Green,Keyboard=Green,Eye=Green', 0, 0, 5),
-(35, 4, 8, 'blue', 0, 0, 3),
-(36, 3, 8, 'transparent', 0, 0, 2),
-(37, 6, 8, 'Red=Honda,BMW=Green,Keyboard=Green,Eye=Green', 0, 0, 5),
-(38, 5, 8, 'india', 1, 1, 0),
-(39, 6, 9, 'Red=Mouse,BMW=Honda,Keyboard=Nose,Eye=Mouse', 0, 0, 5),
-(40, 4, 9, 'fff', 0, 0, 3),
-(41, 6, 9, 'Red=Mouse,BMW=Honda,Keyboard=Nose,Eye=Mouse', 0, 0, 5),
-(42, 3, 9, 'rt', 0, 0, 2),
-(43, 4, 10, '', 0, 0, 3),
-(44, 3, 10, '', 0, 0, 2),
-(45, 4, 11, '', 0, 0, 3),
-(46, 3, 11, '', 0, 0, 2),
-(47, 6, 12, 'Keyboard=,Red=,Eye=,BMW=Green', 0, 0, 5),
-(48, 4, 12, 'blue', 0, 0, 3),
-(49, 6, 12, 'Keyboard=,Red=,Eye=,BMW=Green', 0, 0, 5),
-(50, 3, 12, 'blue', 0, 0, 2),
-(51, 6, 13, 'Red=,Keyboard=Green,Eye=,BMW=', 0, 0, 5),
-(52, 4, 13, '', 0, 0, 3),
-(53, 6, 13, 'Red=Mouse,Keyboard=Green,Eye=Nose,BMW=', 0, 0, 5),
-(54, 3, 13, 'rw', 0, 0, 2),
-(55, 4, 14, '', 0, 0, 3),
-(56, 3, 14, '', 0, 0, 2),
-(57, 3, 15, 'blue', 0, 0, 2),
-(58, 6, 15, 'Red=,BMW=Nose,Keyboard=,Eye=', 0, 0, 5),
-(59, 0, 0, 'blue', 0, 0, 2),
-(60, 4, 16, '', 0, 0, 3),
-(61, 3, 17, '', 0, 0, 2),
-(62, 3, 18, 'blue', 0, 0, 2),
-(63, 5, 16, '', 0, 0, 4),
-(64, 3, 16, '', 0, 0, 2),
-(65, 5, 18, 'test', 1, 1, 4),
-(66, 5, 18, 'test', 1, 1, 0),
-(67, 5, 19, '', 0, 0, 4),
-(68, 3, 19, 'transparent', 0, 0, 2),
-(69, 3, 20, '', 0, 0, 2),
-(70, 5, 20, '', 0, 0, 4),
-(71, 3, 21, '', 0, 0, 2),
-(72, 5, 22, '', 0, 0, 4),
-(73, 3, 22, 'transparent', 0, 0, 2),
-(74, 6, 24, 'Keyboard=,Red=,BMW=,Eye=', 0, 0, 5),
-(75, 6, 25, 'Eye=,Red=,BMW=,Keyboard=', 0, 0, 5),
-(76, 3, 25, '', 0, 0, 2),
-(77, 5, 25, 'test', 0, 0, 0),
-(78, 3, 26, '', 0, 0, 2),
-(79, 6, 27, 'Keyboard=,BMW=,Red=,Eye=', 0, 0, 5),
-(80, 3, 27, '', 0, 0, 2),
-(81, 3, 28, '', 0, 0, 2),
-(82, 3, 29, '', 0, 0, 2),
-(83, 6, 30, 'Red=,Eye=,Keyboard=,BMW=', 0, 0, 5),
-(84, 3, 30, '', 0, 0, 2),
-(85, 6, 31, 'Red=,BMW=,Keyboard=,Eye=', 0, 0, 5),
-(86, 3, 31, '', 0, 0, 2),
-(87, 19, 25, '', 0, 0, 4),
-(88, 5, 25, 'test', 0, 0, 0),
-(89, 18, 25, '', 0, 0, 3),
-(90, 27, 26, '0', 0, 0, 5),
-(91, 26, 26, '', 0, 0, 4),
-(92, 25, 26, '', 0, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -300,16 +203,8 @@ CREATE TABLE IF NOT EXISTS `qbank` (
   `q_type` int(11) NOT NULL,
   `scid` int(11) NOT NULL,
   PRIMARY KEY (`qid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `qbank`
---
-
-INSERT INTO `qbank` (`qid`, `question`, `description`, `cid`, `did`, `institute_id`, `q_type`, `scid`) VALUES
-(31, 'What is 2+2 = ?', 'Here is description or explanation', 2, 2, 1, 0, 1),
-(32, '<p><img src=&#34;http://127.0.0.1/rapid/online-test/images/uploads/car.jpg&#34; /></p>', '', 2, 2, 1, 0, 1),
-(33, 'What is 2+2 = ?(multiple choice)', '', 2, 2, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -346,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `question_sub_category` (
   `category_name` varchar(100) NOT NULL,
   `institute_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`scid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `question_sub_category`
@@ -354,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `question_sub_category` (
 
 INSERT INTO `question_sub_category` (`scid`, `category_name`, `institute_id`) VALUES
 (1, 'Geometry', 1),
-(3, 'Data Interpretation', 1);
+(2, 'Data Interpretation', 1);
 
 -- --------------------------------------------------------
 
@@ -384,14 +279,8 @@ CREATE TABLE IF NOT EXISTS `quiz` (
   `camera_req` int(1) NOT NULL DEFAULT '0',
   `pract_test` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`quid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `quiz`
---
-
-INSERT INTO `quiz` (`quid`, `quiz_name`, `description`, `start_time`, `end_time`, `duration`, `pass_percentage`, `test_type`, `credit`, `view_answer`, `max_attempts`, `correct_score`, `incorrect_score`, `institute_id`, `qids_static`, `qselect`, `ip_address`, `camera_req`, `pract_test`) VALUES
-(9, 'Quiz 1', '', 1462818600, 1494354600, 50, '79', 0, '0', 1, 20, '1', '0', 1, '33,32,31', 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -406,14 +295,8 @@ CREATE TABLE IF NOT EXISTS `quiz_group` (
   `gid` int(11) NOT NULL,
   `institute_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`qgid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `quiz_group`
---
-
-INSERT INTO `quiz_group` (`qgid`, `quid`, `gid`, `institute_id`) VALUES
-(26, 9, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -461,14 +344,8 @@ CREATE TABLE IF NOT EXISTS `quiz_result` (
   `essay_ques` int(11) NOT NULL DEFAULT '0',
   `score_ind` varchar(2000) NOT NULL,
   PRIMARY KEY (`rid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `quiz_result`
---
-
-INSERT INTO `quiz_result` (`rid`, `uid`, `quid`, `qids`, `category_name`, `qids_range`, `oids`, `start_time`, `end_time`, `last_response`, `time_spent`, `time_spent_ind`, `score`, `percentage`, `q_result`, `status`, `institute_id`, `photo`, `essay_ques`, `score_ind`) VALUES
-(3, 1, 9, '33,32,31', 'Math', '0-2', '116-117,111,108', 1464030348, 1464030365, 1464030348, 17, '4,7,3', 3, '100', 1, 1, 1, '', 0, '1,1,1');
 
 -- --------------------------------------------------------
 
@@ -484,25 +361,8 @@ CREATE TABLE IF NOT EXISTS `q_options` (
   `score` varchar(10) NOT NULL,
   `institute_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`oid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=119 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `q_options`
---
-
-INSERT INTO `q_options` (`oid`, `qid`, `option_value`, `score`, `institute_id`) VALUES
-(107, 31, 'five', '0', 1),
-(108, 31, 'four', '1', 1),
-(109, 31, 'three', '0', 1),
-(110, 31, 'six', '0', 1),
-(111, 32, '1', '1', 1),
-(112, 32, '2', '0', 1),
-(113, 32, '3', '0', 1),
-(114, 32, '4', '0', 1),
-(115, 33, 'five', '0', 1),
-(116, 33, '4', '0.5', 1),
-(117, 33, 'four', '0.5', 1),
-(118, 33, 'six', '0', 1);
 
 -- --------------------------------------------------------
 
