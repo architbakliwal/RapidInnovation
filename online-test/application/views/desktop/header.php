@@ -40,7 +40,16 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-toggle.min.js"></script>
 
 
-<script type="text/javascript" src="<?php echo base_url();?>/js/basic.js?rd=<?php echo time();?>"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/basic.js?rd=<?php echo time();?>"></script>
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/responsive.bootstrap.min.css">
+  
+<script type="text/javascript" charset="utf8" src="<?php echo base_url();?>js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo base_url();?>js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo base_url();?>js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo base_url();?>js/responsive.bootstrap.min.js"></script>
+
  
 <?php 
   if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {

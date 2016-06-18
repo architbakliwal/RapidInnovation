@@ -43,63 +43,54 @@ if($logged_in['su']=="1"){
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <!-- <div class="table-responsive"> -->
                             <form method="post" action="<?php echo site_url('qbank/remove_qids/'.$limit);?>" id="removeqids">
-                                <table class="table table-condensed table-hover table-striped">
+                                <table id="quiz-list" class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
                                         <tr><th>Id</th><th>Quiz name</th><th>Available from</th><th>Available till</th><th>Duration</th><th>Action</th></tr>
 
                                     </thead>
                                     <tbody>
                                        
-								<?php
-								if($result==false){
-								?>
-								<tr>
-								<td colspan="6">
-								No record foud!
-								</td>
-								</tr>
-								<?php
+    								<?php
+    								if($result==false){
+    								?>
+    								<tr>
+    								<td colspan="6">
+    								No record foud!
+    								</td>
+    								</tr>
+    								<?php
 
-								}else{
-foreach($result as $row){
-?>
-<tr>
-<td  data-th="Id"><?php echo $row->quid;?></td><td  data-th="Quiz Name"><?php echo $row->quiz_name;?></td>
-<td data-th="Start Time"><?php echo date('Y/m/d',$row->start_time);?></td>
-<td  data-th="End Time"><?php echo date('Y/m/d',$row->end_time);?></td>
-<td  data-th="Duration"><?php echo $row->duration;?> Min. </td>
-<td data-th="Action">
-<a href="<?php echo site_url('quiz/attempt/'.$row->quid);?>"  class="btn btn-warning btn-xs">Attempt</a>
-&nbsp;&nbsp;
-<?php
-if($logged_in['su']=="1"){
-?>
-<a href="javascript: if(confirm('Do you really want to remove this quiz?')){ window.location='<?php echo site_url('quiz/remove_quiz/'.$row->quid );?>'; }" class="btn btn-danger btn-xs">Remove</a> <a href="<?php echo site_url('quiz/edit_quiz/'.$row->quid );?>"  class="btn btn-info btn-xs">Edit</a>
-<?php
-}
-?>
-</td>
-</tr>
+								} else {
+                                    foreach($result as $row){
+                                    ?>
+                                    <tr>
+                                    <td  data-th="Id"><?php echo $row->quid;?></td><td  data-th="Quiz Name"><?php echo $row->quiz_name;?></td>
+                                    <td data-th="Start Time"><?php echo date('Y/m/d',$row->start_time);?></td>
+                                    <td  data-th="End Time"><?php echo date('Y/m/d',$row->end_time);?></td>
+                                    <td  data-th="Duration"><?php echo $row->duration;?> Min. </td>
+                                    <td data-th="Action">
+                                    <a href="<?php echo site_url('quiz/attempt/'.$row->quid);?>"  class="btn btn-warning btn-xs">Attempt</a>
+                                    &nbsp;&nbsp;
+                                    <?php
+                                    if($logged_in['su']=="1"){
+                                    ?>
+                                    <a href="javascript: if(confirm('Do you really want to remove this quiz?')){ window.location='<?php echo site_url('quiz/remove_quiz/'.$row->quid );?>'; }" class="btn btn-danger btn-xs">Remove</a> <a href="<?php echo site_url('quiz/edit_quiz/'.$row->quid );?>"  class="btn btn-info btn-xs">Edit</a>
+                                    <?php
+                                    }
+                                    ?>
+                                    </td>
+                                    </tr>
 								<?php
 								}
 								}
 
 								?>
-
-
-
-
-
-
-								
-
-
- 
                                     </tbody>
-                                </table></form>
-                            </div>
+                                </table>
+                            </form>
+                            <!-- </div> -->
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -110,6 +101,14 @@ if($logged_in['su']=="1"){
 
                 <!-- /.col-lg-6 -->
 </div>
+
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#quiz-list').DataTable({
+            responsive: true
+        });
+    });
+</script>
 
 <?php
 if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>

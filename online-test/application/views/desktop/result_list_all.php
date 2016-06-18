@@ -56,8 +56,8 @@ if($logged_in['su']=="1"){
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-condensed table-hover table-striped">
+                            <!-- <div class="table-responsive"> -->
+                                <table id="result-list" class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
 									<tr><th >Id</th>
 									<?php
@@ -77,59 +77,58 @@ if($logged_in['su']=="1"){
 									<th>Action</th></tr>
                                     </thead>
                                     <tbody>
-<?php
-if($result==false){
-?>
-<tr>
-<td colspan="5">
-No record foud!
-</td>
-</tr>
-<?php
-
-}else{
-foreach($result as $row){
-	// print_r(($row));
-?>									
-									
+									<?php
+									if($result==false){
+									?>
 									<tr>
-<td data-th="ID"><?php echo $row->rid;?></td>
-<?php
-if($logged_in['su']=="1" && $logged_in['id']=="1"){
-?>
-<td data-th="Username"><?php echo $row->username;?></td>
-<td data-th="First Name"><?php echo $row->first_name;?></td>
-<td data-th="Last Name"><?php echo $row->last_name;?></td>
-<?php
-}
-?>
-<td data-th="Quiz Name"><?php echo $row->quiz_name;?></td>
-<td data-th="Date Taken"><?php echo date('d-M-Y', ($row->last_response));?></td>
-<td data-th="Score"><?php echo $row->score;?></td>
-<td data-th="Percentage"><?php echo substr($row->percentage , 0, 5 );?>%</td>
-<td data-th="Result"><?php if($row->q_result == "1"){  echo "Pass"; }else if($row->q_result == "0"){ echo "Fail"; }else{ echo "Pending"; } ?> </td>
-<td data-th="Action">
-<a href="<?php echo site_url('result/view/'.$row->rid.'/'.$row->quid);?>" class="btn btn-warning btn-xs">View</a>
-<?php
-if($logged_in['su']=="1" && $logged_in['id']=="1"){
-?>
-<a href="<?php echo site_url('result/remove_result/'.$row->rid);?>" class="btn btn-danger btn-xs">Remove</a>
-<?php
-}
-?>
+									<td colspan="5">
+									No record foud!
+									</td>
+									</tr>
+									<?php
 
-</td>
-</tr>
-<?php
-}
-}
-?>
- </tbody>
+									}else{
+									foreach($result as $row){
+										// print_r(($row));
+									?>									
+																		
+																		<tr>
+									<td data-th="ID"><?php echo $row->rid;?></td>
+									<?php
+									if($logged_in['su']=="1" && $logged_in['id']=="1"){
+									?>
+									<td data-th="Username"><?php echo $row->username;?></td>
+									<td data-th="First Name"><?php echo $row->first_name;?></td>
+									<td data-th="Last Name"><?php echo $row->last_name;?></td>
+									<?php
+									}
+									?>
+									<td data-th="Quiz Name"><?php echo $row->quiz_name;?></td>
+									<td data-th="Date Taken"><?php echo date('d-M-Y', ($row->last_response));?></td>
+									<td data-th="Score"><?php echo $row->score;?></td>
+									<td data-th="Percentage"><?php echo substr($row->percentage , 0, 5 );?>%</td>
+									<td data-th="Result"><?php if($row->q_result == "1"){  echo "Pass"; }else if($row->q_result == "0"){ echo "Fail"; }else{ echo "Pending"; } ?> </td>
+									<td data-th="Action">
+									<a href="<?php echo site_url('result/view/'.$row->rid.'/'.$row->quid);?>" class="btn btn-warning btn-xs">View</a>
+									<?php
+									if($logged_in['su']=="1" && $logged_in['id']=="1"){
+									?>
+									<a href="<?php echo site_url('result/remove_result/'.$row->rid);?>" class="btn btn-danger btn-xs">Remove</a>
+									<?php
+									}
+									?>
 
-</table>
+									</td>
+									</tr>
+									<?php
+									}
+									}
+									?>
+									 </tbody>
 
+									</table>
 
-                          </div>
+                          <!-- </div> -->
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -140,6 +139,14 @@ if($logged_in['su']=="1" && $logged_in['id']=="1"){
 
                 <!-- /.col-lg-6 -->
 </div>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+	    $('#result-list').DataTable({
+	    	responsive: true
+	    });
+	});
+</script>
 
 
 <?php

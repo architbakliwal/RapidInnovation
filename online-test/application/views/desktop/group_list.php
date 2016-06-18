@@ -14,7 +14,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                         <!-- .panel-heading -->
                         <div class="panel-body">
                             <div class="panel-group" id="accordion">
-                                <table class="table table-hover">
+                                <table id="usergroup-list" class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
                                    
                                
@@ -55,7 +55,13 @@ foreach($result as $row){
                 <!-- /.col-lg-12 -->
             </div>
 			
-			
+<script type="text/javascript">
+$(document).ready( function () {
+  $('#usergroup-list').DataTable({
+    responsive: true
+  });
+});
+</script>			
 			
 			
 			

@@ -74,9 +74,9 @@ if ( $resultstatus ) { echo "<div class='alert alert-success'>".$resultstatus."<
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <!-- <div class="table-responsive"> -->
                             <form method="post" action="<?php echo site_url( 'qbank/remove_qids/'.$limit );?>" id="removeqids">
-                                <table class="table table-condensed table-hover table-striped">
+                                <table id="question-list" class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
                                         <tr>
                                             <th><input type="checkbox" name=""  onClick="selectall('<?php echo count( $result );?>');"></th>
@@ -92,8 +92,8 @@ if ( $resultstatus ) { echo "<div class='alert alert-success'>".$resultstatus."<
                                     <tbody>
 
 								<?php
-if ( $result==false ) {
-?>
+								if ( $result==false ) {
+								?>
 								<tr>
 								<td colspan="6">
 								No record foud!
@@ -101,32 +101,32 @@ if ( $result==false ) {
 								</tr>
 								<?php
 
-}else {
+								}else {
 
 
 
-	$j=0;
-	foreach ( $result as $row ) {
-		$j+=1;
-		if ( $row->q_type=="0" ) {
-			$type="Multiple Choice - single answers";
-		}
-		if ( $row->q_type=="1" ) {
-			$type="Multiple Choice - multiple answers";
-		}
-		if ( $row->q_type=="2" ) {
-			$type="Fill in the Blank";
-		}
-		if ( $row->q_type=="3" ) {
-			$type="Short Answer";
-		}
-		if ( $row->q_type=="4" ) {
-			$type="Essay";
-		}
-		if ( $row->q_type=="5" ) {
-			$type="Matching";
-		}
-?>
+									$j=0;
+									foreach ( $result as $row ) {
+										$j+=1;
+										if ( $row->q_type=="0" ) {
+											$type="Multiple Choice - single answers";
+										}
+										if ( $row->q_type=="1" ) {
+											$type="Multiple Choice - multiple answers";
+										}
+										if ( $row->q_type=="2" ) {
+											$type="Fill in the Blank";
+										}
+										if ( $row->q_type=="3" ) {
+											$type="Short Answer";
+										}
+										if ( $row->q_type=="4" ) {
+											$type="Essay";
+										}
+										if ( $row->q_type=="5" ) {
+											$type="Matching";
+										}
+								?>
 								<tr>
 								<td data-th="Select"><input type="checkbox" name="qid[]" value="<?php echo $row->qid;?>" id="checkbox<?php echo $j;?>"></td>
 								<td data-th="ID"><?php echo $row->qid;?></td>
@@ -140,23 +140,15 @@ if ( $result==false ) {
 								 <a href="<?php echo site_url( 'qbank/edit_question/'.$row->qid.'/'.$row->q_type );?>" class="btn btn-info btn-xs">Edit</a></td>
 								</tr>
 								<?php
-	}
-}
+									}
+								}
 
-?>
-
-
-
-
-
-
-
-
-
+								?>
 
                                     </tbody>
-                                </table></form>
-                            </div>
+                                </table>
+                            </form>
+                            <!-- </div> -->
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -167,6 +159,14 @@ if ( $result==false ) {
 
                 <!-- /.col-lg-6 -->
 </div>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+	    $('#question-list').DataTable({
+	    	responsive: true
+	    });
+	});
+</script>
 
 <a href="javascript:removeqids();"  class="btn btn-danger">Remove</a>
 &nbsp;&nbsp;

@@ -83,10 +83,12 @@ $oids=explode(",",$result->oids);
 foreach($assigned_question[1] as $keys => $option){
 if($option['qid']==$question['qid']){
 ?>
-<tr><td><table>
-<tr><td style="width:10px; border:0px;"> <input type="radio" name="answers<?php echo $key;?>" value="<?php echo $option['oid'];?>" <?php if(in_array($option['oid'],$oids)){ echo "checked"; } ?> ></td>
-<td style="border:0px;width:750px;"> <?php echo $option['option_value'];?> </td>
-<td valign="top"><?php if($option['score']=="1"){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td></tr></table>
+<tr><td><table class="table table-borderless">
+<tr>
+	<td valign="top" width="30px"><?php if($option['score']=="1"){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td>
+	<td style="width:10px; border:0px;"> <input type="radio" name="answers<?php echo $key;?>" value="<?php echo $option['oid'];?>" <?php if(in_array($option['oid'],$oids)){ echo "checked"; } ?> disabled></td>
+	<td style="border:0px;width:750px;"> <?php echo $option['option_value'];?> </td>
+</tr></table>
 </td></tr>
 <?php
 }
@@ -96,13 +98,13 @@ if($option['qid']==$question['qid']){
 <?php
 if($key >="1"){
 ?>
-<input type="button" value="Back"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="button-warning pure-button">
+<input type="button" value="Previous"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="btn btn-warning pure-button">
 <?php
 }
 
 if($key!=(count($assigned_question['0'])-1)){
 ?>
-<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="button-warning pure-button">
+<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="btn btn-primary pure-button">
 <?php
 }
 ?></td></tr>
@@ -128,10 +130,13 @@ foreach($assigned_question[1] as $keys => $option){
 	
 if($option['qid']==$question['qid']){
 ?>
-<tr><td><table>
-<tr><td style="width:10px; border:0px;"> <input type="checkbox" name="answers<?php echo $key;?>" value="<?php echo $option['oid'];?>" <?php if(in_array($option['oid'],$oids)){ echo "checked"; } ?> ></td>
-<td style="border:0px;width:750px;"> <?php echo $option['option_value'];?> </td>
-<td valign="top"><?php if($option['score']>"0"){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td></tr></table>
+<tr><td><table class="table table-borderless">
+<tr>
+	<td valign="top" width="30px"><?php if($option['score']>"0"){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td>
+	<td style="width:10px; border:0px;"> <input type="checkbox" name="answers<?php echo $key;?>" value="<?php echo $option['oid'];?>" <?php if(in_array($option['oid'],$oids)){ echo "checked"; } ?> disabled></td>
+	<td style="border:0px;width:750px;"> <?php echo $option['option_value'];?> </td>
+</tr>
+</table>
 </td></tr>
 <?php
 }
@@ -141,13 +146,13 @@ if($option['qid']==$question['qid']){
 <?php
 if($key >="1"){
 ?>
-<input type="button" value="Back"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="button-warning pure-button">
+<input type="button" value="Previous"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="btn btn-warning pure-button">
 <?php
 }
 
 if($key!=(count($assigned_question['0'])-1)){
 ?>
-<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="button-warning pure-button">
+<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="btn btn-primary pure-button">
 <?php
 }
 ?></td></tr>
@@ -175,10 +180,12 @@ foreach($assigned_question[1] as $keys => $option){
 if($option['qid']==$question['qid']){
 	
 ?>
-<tr><td><table>
-<tr><td style="width:10px; border:0px;"> </td>
-<td style="border:0px;width:750px;"> <?php echo "Correct answer=".$option['option_value']."<br>Your Answer=".$given_ans_fillups[$fill];?> </td>
-<td valign="top"><?php if(strip_tags($option['option_value'])==$given_ans_fillups[$fill]){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td></tr></table>
+<tr><td><table style="width:100%">
+<tr>
+	<td valign="top" style="width: 30px;"><?php if(strip_tags($option['option_value'])==$given_ans_fillups[$fill]){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td>
+	<td style="width:10px; border:0px;"> </td>
+	<td style="border:0px;width:750px;"> <?php echo "Correct answer=".$option['option_value']."<br>Your Answer=".$given_ans_fillups[$fill];?> </td>
+</tr></table>
 </td></tr>
 <?php
 }
@@ -190,13 +197,13 @@ $fill+=1;
 <?php
 if($key >="1"){
 ?>
-<input type="button" value="Back"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="button-warning pure-button">
+<input type="button" value="Previous"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="btn btn-warning pure-button">
 <?php
 }
 
 if($key!=(count($assigned_question['0'])-1)){
 ?>
-<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="button-warning pure-button">
+<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="btn btn-primary pure-button">
 <?php
 }
 ?></td></tr>
@@ -221,17 +228,19 @@ $oids=explode(",",$result->oids);
 foreach($assigned_question[1] as $keys => $option){
 if($option['qid']==$question['qid']){
 ?>
-<tr><td><table>
-<tr><td style="width:10px; border:0px;"> </td>
-<td style="border:0px;width:750px;"> <?php echo "Correct answers=".$option['option_value']."<br>Your Answer=".$given_ans_short[$short_ans];?> </td>
-<?php if($given_ans_short[$short_ans]!=""){?>
-<td valign="top"><?php if(strpos(strip_tags($option['option_value']),$given_ans_short[$short_ans])!== false){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td>
+<tr><td><table style="width:100%">
+<tr>
+	<?php if($given_ans_short[$short_ans]!=""){?>
+<td valign="top" style="width: 30px;"><?php if(strpos(strip_tags($option['option_value']),$given_ans_short[$short_ans])!== false){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td>
 
 <?php }else{
 	
 	echo "<td>NOT ATTEMPTED</td>";
 	
 }?>
+	<td style="width:10px; border:0px;"> </td>
+	<td style="border:0px;width:750px;"> <?php echo "Correct answers=".$option['option_value']."<br>Your Answer=".$given_ans_short[$short_ans];?> </td>
+
 </tr></table>
 </td>
 </tr>
@@ -248,13 +257,13 @@ $short_ans+=1;
 <?php
 if($key >="1"){
 ?>
-<input type="button" value="Back"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="button-warning pure-button">
+<input type="button" value="Previous"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="btn btn-warning pure-button">
 <?php
 }
 
 if($key!=(count($assigned_question['0'])-1)){
 ?>
-<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="button-warning pure-button">
+<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="btn btn-primary pure-button">
 <?php
 }
 ?></td></tr>
@@ -299,13 +308,13 @@ if($essay_status[$essay_ans]=="0"){?>
 $essay_ans+=0;
 if($key >="1"){
 ?>
-<input type="button" value="Back"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="button-warning pure-button">
+<input type="button" value="Previous"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="btn btn-warning pure-button">
 <?php
 }
 
 if($key!=(count($assigned_question['0'])-1)){
 ?>
-<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="button-warning pure-button">
+<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="btn btn-primary pure-button">
 <?php
 }
 ?></td></tr>
@@ -337,10 +346,12 @@ foreach($assigned_question[1] as $keys => $option){
 	
 if($option['qid']==$question['qid']){
 ?>
-<tr><td><table>
-<tr><td style="width:10px; border:0px;"> </td>
-<td style="border:0px;width:750px;"> <?php echo str_replace('=','   =   ',$option['option_value']);?> </td>
-<td valign="top"><?php if($option['score']=="1"){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td></tr></table>
+<tr><td><table style="width:100%">
+<tr>
+	<td valign="top" style="width: 30px;"><?php if($option['score']=="1"){ ?><img src="<?php echo base_url();?>images/tick-icon.png"><?php } ?></td>
+	<td style="width:10px; border:0px;"> </td>
+	<td style="border:0px;width:750px;"> <?php echo str_replace('=','   =   ',$option['option_value']);?> </td>
+</tr></table>
 </td></tr>
 <?php
 }
@@ -359,13 +370,13 @@ $match_ans+=1;
 <?php
 if($key >="1"){
 ?>
-<input type="button" value="Back"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="button-warning pure-button">
+<input type="button" value="Previous"  onClick="showquestion_afterquiz('<?php echo $key-1;?>');" class="btn btn-warning pure-button">
 <?php
 }
 
 if($key!=(count($assigned_question['0'])-1)){
 ?>
-<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="button-warning pure-button">
+<input type="button" value="Next"  onClick="showquestion_afterquiz('<?php echo $key+1;?>');" class="btn btn-primary pure-button">
 <?php
 }
 ?></td></tr>

@@ -29,8 +29,8 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-condensed table-hover table-striped">
+                            <!-- <div class="table-responsive"> -->
+                                <table id="user-list" class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -71,11 +71,9 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 								}
 								?>
 
-
- 
                                     </tbody>
                                 </table>
-                            </div>
+                            <!-- </div> -->
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -86,6 +84,15 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 
                 <!-- /.col-lg-6 -->
 </div>
+
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#user-list').DataTable({
+            responsive: true
+        });
+    });
+</script>
+
 
 
 <?php

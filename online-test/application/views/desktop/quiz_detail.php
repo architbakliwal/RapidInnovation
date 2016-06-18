@@ -11,12 +11,8 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                         <!-- .panel-heading -->
                         <div class="panel-body">
                             <div class="panel-group" id="accordion">
-                               
-                               
 							   
-							   
-							   
-                                <table class="table table-hover">
+                                <table id="quiz-table" class="table table-striped table-bordered dt-responsive">
                                     
                                     <tbody>
                                        
@@ -61,16 +57,18 @@ if($this->config->item('webcam_plugin') == true && $result->camera_req == "1"){
 
 </td></tr>
 
-
-
-                                    </tbody>
+</tbody>
 </table>
 
 
+<script type="text/javascript">
+$(document).ready( function () {
+  $('#quiz-table').DataTable({
+    responsive: true
+  });
+});
+</script>
 
-
-
-							   
 							   
                             </div>
                         </div>
