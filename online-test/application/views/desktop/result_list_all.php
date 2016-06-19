@@ -57,7 +57,7 @@ if($logged_in['su']=="1"){
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <!-- <div class="table-responsive"> -->
-                                <table id="result-list" class="table table-striped table-bordered dt-responsive nowrap">
+                                <table id="result-list" class="table table-striped table-bordered dt-responsive">
                                     <thead>
 									<tr><th >Id</th>
 									<?php
@@ -147,18 +147,6 @@ if($logged_in['su']=="1"){
 	    });
 	});
 </script>
-
-
-<?php
-if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-<?php if(!(($limit-($this->config->item('number_of_rows'))) < 0)) { ?>
-<a href="<?php echo site_url('result/user/'.$back);?>"   class="btn btn-primary">Back</a>
-&nbsp;&nbsp;
-<?php } ?>
-<?php $next=$limit+($this->config->item('number_of_rows'));  ?>
-<?php if($result==true){ ?>
-	<a href="<?php echo site_url('result/user/'.$next);?>"  class="btn btn-primary">Next</a>
-<?php } ?>
 									
 									
 									

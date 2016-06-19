@@ -15,7 +15,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                         <!-- .panel-heading -->
                         <div class="panel-body">
                             <div class="panel-group" id="accordion">
-                                <table class="table table-hover">
+                                <table id="subcategory-list" class="table table-striped table-bordered dt-responsive nowrap">
                                     <thead>
                                    
 <tr><th>Id</th><th>Sub Category</th><th>Action</th></tr><thead><tbody>
@@ -53,20 +53,10 @@ foreach($result as $row){
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			
-			
-			
-			
-			
-			
-
-<?php
-if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-
-<a href="<?php echo site_url('sub_category_controller/index/'.$back);?>"    class="btn btn-primary">Back</a>
-&nbsp;&nbsp;
-<?php
- $next=$limit+($this->config->item('number_of_rows'));  ?>
-
-<a href="<?php echo site_url('sub_category_controller/index/'.$next);?>"   class="btn btn-primary">Next</a>
- 
+<script type="text/javascript">
+$(document).ready( function () {
+  $('#subcategory-list').DataTable({
+    responsive: true
+  });
+});
+</script>

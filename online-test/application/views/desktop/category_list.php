@@ -61,14 +61,4 @@ $(document).ready( function () {
   });
 });
 </script>
-
-<?php
-if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-
-<a href="<?php echo site_url('category_controller/index/'.$back);?>"    class="btn btn-primary">Back</a>
-&nbsp;&nbsp;
-<?php
- $next=$limit+($this->config->item('number_of_rows'));  ?>
-
-<a href="<?php echo site_url('category_controller/index/'.$next);?>"   class="btn btn-primary">Next</a>
  

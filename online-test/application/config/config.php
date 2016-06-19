@@ -23,7 +23,7 @@ if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
 /*
 | number of records per page
 */
-$config['number_of_rows']	= '30';
+$config['number_of_rows']	= '100000000';
 
 /*
 | enable user self-registration form. use true or false

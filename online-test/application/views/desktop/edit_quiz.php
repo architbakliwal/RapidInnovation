@@ -237,7 +237,7 @@ if($assigned_questions ==false){
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                               <table class="table table-hover">
+                               <table id="editquiz-list" class="table table-striped table-bordered dt-responsive">
                                     <thead>
 <tr><th>Id</th>
 <th>Question</th>
@@ -313,7 +313,13 @@ if($key==(count($assigned_questions)-1)){
                 <!-- /.col-lg-6 -->
 </div>
 
-
+<script type="text/javascript">
+	$(document).ready( function () {
+	    $('#editquiz-list').DataTable({
+	    	responsive: true
+	    });
+	});
+</script>
 
 
 <br><br>

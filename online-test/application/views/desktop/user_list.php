@@ -95,19 +95,6 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 
 
 
-<?php
-if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
-<?php if(!(($limit-($this->config->item('number_of_rows'))) < 0)) { ?>
-<a href="<?php echo site_url('user_data/index/'.$back);?>"  class="btn btn-primary">Back</a>
-&nbsp;&nbsp;
-<?php } ?>
-<?php $next=$limit+($this->config->item('number_of_rows'));  ?>
-<?php if($result==true){ ?>
-<a href="<?php echo site_url('user_data/index/'.$next);?>"  class="btn btn-primary">Next</a>
-<?php } ?>
-
-
-
 
 
 

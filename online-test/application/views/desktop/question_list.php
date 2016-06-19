@@ -163,35 +163,16 @@ if ( $resultstatus ) { echo "<div class='alert alert-success'>".$resultstatus."<
 <script type="text/javascript">
 	$(document).ready( function () {
 	    $('#question-list').DataTable({
-	    	responsive: true
+	    	responsive: true,
+	    	order: [[ 1, 'asc' ]]
 	    });
 	});
 </script>
 
 <a href="javascript:removeqids();"  class="btn btn-danger">Remove</a>
 &nbsp;&nbsp;
-<?php
-if ( ( $limit-( $this->config->item( 'number_of_rows' ) ) )>=0 ) { $back=$limit-( $this->config->item( 'number_of_rows' ) ); }else { $back='0'; } ?>
-<?php if ( !( ( $limit-( $this->config->item( 'number_of_rows' ) ) ) < 0 ) ) { ?>
-<a href="<?php echo site_url( 'qbank/index/'.$back.'/'.$fcid );?>"  class="btn btn-primary">Back</a>
-&nbsp;&nbsp;
-<?php } ?>
-<?php
-$next=$limit+( $this->config->item( 'number_of_rows' ) );  ?>
-<?php if ( $result==true ) { ?>
-<a href="<?php echo site_url( 'qbank/index/'.$next.'/'.$fcid );?>"  class="btn btn-primary">Next</a>
-&nbsp;&nbsp;
-<?php } ?>
-<a href="javascript:showhiddendiv('importbox');"  class="btn btn-warning">Import</a>
 
-
-
-
-
-
-
-
-
+<a href="javascript:showhiddendiv('importbox');"  class="btn btn-primary">Import</a>
 
 <br><br><div class="searchbox form-group" id="importbox">
 <?php echo form_open( 'qbank/import', array( 'enctype'=>'multipart/form-data' ) ); ?>
@@ -201,7 +182,7 @@ Upload Excel file ( .xls only )
 	<input type="hidden" name="size" value="3500000">
 	<input type="file" name="xlsfile" style="width:150px;float:left;margin-left:10px;">
 	<div style="clear:both;"></div>
-	<input type="submit" value="Import" style="margin-top:5px;" class="btn btn-default">
+	<input type="submit" value="Import" style="margin-top:5px;" class="btn btn-info">
 
 <a href="<?php echo base_url();?>xls/sample.xls" target="new">Click here</a> to download sample file to know file format.
 </form><br> </div>
