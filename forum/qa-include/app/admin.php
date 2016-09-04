@@ -290,12 +290,12 @@
 				'selected_on' => array('admin/users$', 'admin/userfields$', 'admin/usertitles$'),
 			);
 
-			/*if ($level>=QA_USER_LEVEL_SUPER) {
+			if ($level>=QA_USER_LEVEL_SUPER) {
 				$navigation['admin/layout']=array(
 					'label' => qa_lang_html('admin/layout_title'),
 					'url' => qa_path_html('admin/layout'),
 				);
-			}*/
+			}
 
 			$navigation['admin/posting']=array(
 				'label' => qa_lang_html('admin/posting_title'),
@@ -323,12 +323,12 @@
 				'url' => qa_path_html('admin/permissions'),
 			);
 
-			/*if ($level>=QA_USER_LEVEL_SUPER) {
+			if ($level>=QA_USER_LEVEL_SUPER) {
 				$navigation['admin/pages']=array(
 					'label' => qa_lang_html('admin/pages_title'),
 					'url' => qa_path_html('admin/pages'),
 				);
-			}*/
+			}
 
 			$navigation['admin/feeds']=array(
 				'label' => qa_lang_html('admin/feeds_title'),
@@ -345,12 +345,12 @@
 				'url' => qa_path_html('admin/spam'),
 			);
 
-			/*if ($level>=QA_USER_LEVEL_SUPER) {
+			if ($level>=QA_USER_LEVEL_SUPER) {
 				$navigation['admin/stats']=array(
 					'label' => qa_lang_html('admin/stats_title'),
 					'url' => qa_path_html('admin/stats'),
 				);
-			}*/
+			}
 
 			if (!QA_FINAL_EXTERNAL_USERS)
 				$navigation['admin/mailing']=array(
@@ -358,12 +358,12 @@
 					'url' => qa_path_html('admin/mailing'),
 				);
 
-			/*if ($level>=QA_USER_LEVEL_SUPER) {
+			if ($level>=QA_USER_LEVEL_SUPER) {
 				$navigation['admin/plugins']=array(
 					'label' => qa_lang_html('admin/plugins_title'),
 					'url' => qa_path_html('admin/plugins'),
 				);
-			}*/
+			}
 		}
 
 		if (!qa_user_maximum_permit_error('permit_moderate')) {

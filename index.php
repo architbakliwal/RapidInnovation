@@ -146,16 +146,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Our Idea</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
             <div class="row">
-                <p>RAPIDOVATIONS is here to make engineering freshers industry ready. We are here to guide the students on how to face the campus recruitment processes. We provide trainings (rather we would call it as “guidance”) to engineering students in their college campus – with well crafted courses covering various topics. Please read on to know more about who we are and how we can help you.
-                </br></br>
-                RAPIDOVATIONS was founded by four members – Ruchir, Abhishek, Prasoon and Deepak – all engineers. After entering the corporate world we realised why we often get to hear that the employability of a graduate in this country is so low! With the motive of addressing the common concern of the employers while hiring a fresh graduate; we are here to bridge the gap between students’ perception of employability and those of employers. Just scoring good marks is not sufficient to secure a good job. We guide the students in developing certain essential skills which make them not only competent enough to secure that dream job, but also achieve great heights in their professional lives.
-                </br></br>
-                We believe in long term engagement with the students so that every student gets ample time to gradually improve their skill sets. Apart from classroom trainings, we provide students with an excellent forum where they can get their queries answered directly from industry experts and placements oriented online tests.
-                </p>
+                <p>On Campus <strong>Pre Placement Training Course</strong><br /><br/>Rapidovations provides a unique <strong>training program </strong>to<strong> engineering </strong>students and help them cope with the <strong>pre placement</strong> stress. They make the entire process surprisingly relaxing by providing the training from 3rd semester till the 6th semester. The prolong <strong>training</strong> modules set a slow and steady pace for you to adjust with the new added course, give you sufficient time to develop the required soft skills, and guide you in making right career choices.</p>
+                <p><br />At Rapidovations, we work on bridging the gap between the employee and the employer by providing them both a common platform to interact with each other. The forum on our website is one of the many ways by which you can interact with industry experts directly.</p>
             </div>
         </div>
     </section>
@@ -165,7 +161,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">A plethora of Opportunities</h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -175,7 +171,7 @@
                         <i class="glyphicon glyphicon-bookmark fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Classroom Training</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">We at Rapidovations have merged the old age method of hands on training with the use of latest technology to give you state-of-art learning experience. There are…</p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
@@ -183,7 +179,7 @@
                         <i class="glyphicon glyphicon-bullhorn fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Online Tests</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">You can take multiple online tests based on the pattern on which you will be tested by various companies. We have a vast database accessible once you register with us online. Take sample tests here.</p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
@@ -191,7 +187,7 @@
                         <i class="glyphicon glyphicon-star fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Q&A Platform</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Our online forum, where you can register for free to get career advice from industry experts and professors with years of experience, and interact with like minded students and share your opinions and ideas. To register, click here.</p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
@@ -199,7 +195,7 @@
                         <i class="glyphicon glyphicon-bookmark fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Extended Curriculum</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">We start early, beginning from the third semester till the time you need us for any sort of career assistance. With Rapidovations you get to train gradually honing your existing skills and devising new ones in a gradual manner. Register with us to know more about the course details.</p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
@@ -207,7 +203,7 @@
                         <i class="glyphicon glyphicon-bullhorn fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Expert Talks</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">To develop the employability attributes of students, interaction with the industry expert via seminars, lectures and conferences is a must. We at Rapidovations firmly believe that there cannot be any substitute to learning by experience sharing. Click here to see the listed industry experts we have privilege to be associated with.</p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <span class="fa-stack fa-4x">
@@ -215,7 +211,7 @@
                         <i class="glyphicon glyphicon-star fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Career Guidance</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Career Opportunities are plenty in all fields right now, but choosing the right path and establishing oneself as a pioneer in the chosen field might take some time and expertise. We at Rapidovations assist you in paving the path in right direction.</p>
                 </div>
             </div>
         </div>
@@ -268,10 +264,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Why RAPID</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
             <div class="row">
+                <p>We are rapidly going to get you where you want, help you hang on, and make sure you reach the zenith because that is where you belong. Click here to know what makes us different from the rest of the bunch.</p>
             </div>
         </div>
     </section>
